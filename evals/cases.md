@@ -63,6 +63,38 @@ This is a development artifact. Do not load it during a normal wish.
   prevents a complete claim.
 - Canonical project docs are updated without creating a parallel I Wish history.
 
+## OpenCode host adapter
+
+- The canonical `~/.agents/skills/i-wish` (or `.opencode/skills/i-wish`)
+  installation is discovered by OpenCode; explicit `/i-wish` is deterministic
+  while implicit activation remains best effort.
+- `/i-wish` names `i-wish` as the sole outer owner, starts with bounded
+  inspection plus the interview/Gate 1, and does not start a second end-to-end
+  workflow.
+- With an active `i-wish` wish, a competing outer workflow (`make-game`,
+  `brainstorm-game`, `brainstorming`, `deepwork`, `grill-me`) is not started by
+  the orchestrator; a bounded worker may still use an assigned specialist skill.
+- A missing or stale runtime copy fails parity validation and is reported as a
+  failed check rather than silently overwritten; removed runtime files cannot be
+  selected accidentally.
+- Before Gate 2, explicit project file writes and recognizable non-read-only
+  shell calls are rejected by the loaded adapter for an active workflow; the
+  known external-process bypass limitation is tested and documented, not hidden.
+- A project without `.opencode/i-wish.json` receives routing guidance only and
+  inherits no unknown path policy.
+- Missing browsing, missing workers, missing write/runtime access, and missing
+  adapter or plugin support each become an explicit degraded or blocked state:
+  disclose it, fall back, and mark required evidence incomplete.
+- When codebase-memory or an independent reviewer/council is unavailable, the
+  lead uses alternative search/trace evidence and explicitly states that
+  multi-model agreement was not obtained.
+- After a restart, a missing, stale, or digest-mismatched checkpoint cannot
+  silently become `implementation-ready`.
+- A Gate 2 checkpoint records approved intent/architecture digests, allowed
+  effects, codebase-memory evidence, review metadata, and the next permitted
+  action in the project's canonical plan or ADR, never a parallel I Wish
+  history.
+
 ## Structural release checks
 
 - `SKILL.md` validates and is at most 180 lines.
@@ -72,6 +104,9 @@ This is a development artifact. Do not load it during a normal wish.
 - Core workflow contains no fixed drive, model, subagent, or host tool name.
 - Frontmatter contains only `name` and `description`.
 - `agents/openai.yaml` remains optional and does not disable implicit invocation.
+- Canonical/runtime hash parity and absence of unexpected installed files are
+  checked by development tools only; the portable skill adds no runtime
+  dependency for them.
 
 Run representative activation and workflow cases in fresh contexts. Keep the
 refactored version out of global Skill locations until structural checks pass

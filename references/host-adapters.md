@@ -12,7 +12,7 @@ Verified against public documentation on 2026-08-08.
 | --- | --- | --- | --- |
 | Codex | `~/.agents/skills/i-wish` | `.agents/skills/i-wish` | `$i-wish` |
 | Claude Code | `~/.claude/skills/i-wish` | `.claude/skills/i-wish` | `/i-wish` |
-| OpenCode | `~/.agents/skills/i-wish` or `~/.config/opencode/skills/i-wish` | `.agents/skills/i-wish` or `.opencode/skills/i-wish` | load through its skill tool |
+| OpenCode | `~/.agents/skills/i-wish` or `~/.config/opencode/skills/i-wish` | `.agents/skills/i-wish` or `.opencode/skills/i-wish` | `/i-wish` command or skill load |
 
 Sources:
 
@@ -40,52 +40,51 @@ with unsettled or delegated boundaries.
 Host-specific metadata may control UI or invocation policy, but core correctness
 must not rely on it. Keep `agents/openai.yaml` optional.
 
-If a host hides skills behind permissions, allow `i-wish` for the lead agent.
-Workers do not all need direct Skill access when the lead gives them bounded
-phase briefs.
+## OpenCode adapter boundary
 
-## No subagents
+OpenCode enforcement is host-layer glue, not portable core. `SKILL.md` and the
+portable references never name adapter tools, models, paths, or states.
 
-Run the workflow in the lead context. For important architecture, write the
-initial proposal first, then perform a separate adversarial review before the
-Gate 2 recommendation. Do not claim independent review.
+- explicit command: `~/.config/opencode/commands/i-wish.md`;
+- local plugin: `~/.config/opencode/plugins/i-wish-adapter.ts` and adjacent
+  modules, plus orchestrator guidance appended by the host framework;
+- project policy: `<project>/.opencode/i-wish.json`, opt-in per project;
+- machine checkpoint: `<project>/.slim/i-wish/<workflow-id>.json`, adapter
+  cache only, not human history.
 
-## Native subagents or teams
+While a wish is active, `i-wish` is the only outer owner. The adapter routes the
+lead to `i-wish`, keeps competing outer workflows from taking ownership, and
+delegates only bounded phase tasks to workers. It mirrors the core states and
+is not a second Wish Flow state machine.
 
-Use host-native research, architecture, implementation, and verification workers
-when useful. Do not hard-code agent names or models. Keep both user Gates and
-evidence synthesis with the lead agent.
+A project without `.opencode/i-wish.json` receives routing guidance only and
+inherits no unknown path policy. Allow `i-wish` for the lead agent; workers need
+no direct Skill access when the lead gives bounded phase briefs.
 
-## Oh My OpenAgent
+The adapter is a local controlled workflow, not a security boundary. It cannot
+prevent `--no-plugins`, alternate configuration, direct external-process writes,
+or deliberate edits to local state. Never present it as an unbypassable gate.
 
-Oh My OpenAgent runs on OpenCode and exposes its own orchestrator, background
-agents, and Team Mode. Let that framework select categories and models. Give it
-bounded tasks for the current I Wish phase; do not start another end-to-end loop
-such as a competing autopilot while I Wish owns the phase contract.
+## Workers and review
 
-Project or user Skill locations supported by OpenCode remain sufficient. Check
-OpenCode skill permissions if a custom agent cannot see I Wish.
-
-Project: <https://github.com/code-yeongyu/oh-my-openagent>
-
-## Oh My Claude Code
-
-Oh My Claude Code supplies native teams and specialized agents. Keep I Wish as
-the product-decision framework and use the team for bounded research, challenge,
-implementation, or verification stages.
-
-Install I Wish in a normal Claude Code Skill location for plain Claude
-compatibility. Oh My Claude Code also documents compatibility with workspace
-`.agents/skills` packages, but `.claude/skills` is the portable Claude default.
-
-Project: <https://github.com/Yeachan-Heo/oh-my-claudecode>
+With no subagents, run in the lead context: write the initial architecture
+proposal first, then a separate adversarial review before the Gate 2
+recommendation; never claim independent review. With native subagents or a team
+framework such as Oh My OpenAgent or Oh My Claude Code, let the host choose
+categories, models, and topology, give it bounded phase tasks, and keep both
+user Gates and evidence synthesis with the lead. Do not start a competing
+end-to-end loop such as another autopilot while I Wish owns the phase contract.
 
 ## Capability degradation
 
 - No browsing: disclose it and use only local evidence or labeled uncertainty
   after the user chooses whether to continue.
 - No structured question tool: use a Markdown batch.
+- No workers or no multi-model review: lead performs a separate adversarial pass
+  and states that multi-model agreement was not obtained.
 - No write/runtime access: produce a plan or user-run verification steps and
   report incomplete evidence.
+- No adapter or plugin: fall back to the plain core skill and state that
+  enforcement hooks are absent.
 - Existing end-to-end workflow explicitly invoked: resolve one outer owner;
   otherwise use the other workflow only as a bounded phase executor.
