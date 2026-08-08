@@ -1,7 +1,4 @@
 interface:
   display_name: "I Wish"
-  short_description: "Research-first planning and verified implementation"
-  default_prompt: "Use $i-wish to turn my rough product idea into a researched, approved, and verified implementation."
-
-policy:
-  allow_implicit_invocation: false
+  short_description: "Interview, research, approve, build, and verify"
+  default_prompt: "Use $i-wish to turn my rough digital-product wish into a researched, approved, and verified implementation."
