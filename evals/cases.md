@@ -4,6 +4,12 @@ This is a development artifact. Do not load it during a normal wish.
 
 ## Activation
 
+Activation requires a substantial new build, major redesign, or new core
+subsystem whose important boundaries are unsettled or delegated. The phrasing
+language alone does not decide activation; intent and scope do.
+
+### Chinese cases
+
 | Case | Expected |
 | --- | --- |
 | “我想要从零做一个合作塔防游戏，细节你推荐” | Activate I Wish |
@@ -12,6 +18,29 @@ This is a development artifact. Do not load it during a normal wish.
 | “修复点击按钮崩溃” | Do not activate |
 | “我想要按这份完整规格做一个单页按钮” | Do not activate |
 | “按已经批准的 ADR 实现 SaveManager” | Do not activate |
+
+### English cases
+
+| Case | Expected |
+| --- | --- |
+| "I want to build a co-op tower defense game from scratch, you pick the stack" | Activate I Wish |
+| "Redesign this game's water physics, the approach is still open" | Activate I Wish |
+| "Explain this water shader" | Do not activate |
+| "Fix the crash when I click the button" | Do not activate |
+| "I want to build a single-page button from this complete spec" | Do not activate |
+| "Implement SaveManager per the approved ADR" | Do not activate |
+
+### Edge cases
+
+| Case | Expected |
+| --- | --- |
+| 裸“我想要”（无实质构建意图，如“我想要开心”） | Do not activate |
+| "I want..." with no build intent, e.g. "I want to be more productive" | Do not activate |
+| “做一个网站”（未限定方向、无实质范围） | Activate I Wish（ unsettled greenfield build） |
+| "Make me a website"（unsettled scope） | Activate I Wish |
+| “按已批准 ADR 实现但范围明显超出 ADR 边界” | Activate I Wish（material scope change reopens research/Gate 2） |
+| "Add OAuth to the existing login per the approved plan" | Do not activate（architecture-preserving, in-scope） |
+| 中英混合：“我想要 build a multiplayer game” | Activate I Wish（substantial unsettled build） |
 
 ## Interview and gates
 
