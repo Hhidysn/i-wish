@@ -32,7 +32,8 @@ Use two evidence tracks:
   installed dependencies, and licensed plugins, templates, components, or
   assets may become implementation candidates.
 
-Never copy proprietary decompiled code, shaders, models, textures, audio, or
+Analyzing decompiled proprietary code to understand implementation ideas is
+acceptable; never copy its source code, shaders, models, textures, audio, or
 other assets. Code shown in an article or video is not reusable unless an
 applicable license says so.
 

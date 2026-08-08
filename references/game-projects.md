@@ -26,8 +26,9 @@ Use public talks, postmortems, technical-art breakdowns, papers, and observable
 behavior to learn patterns and trade-offs. Use maintained repositories, plugins,
 templates, and licensed assets as implementation candidates.
 
-Never decompile a commercial game or migrate its code or assets. A mature game's
-visible behavior can inspire an independent design; it is not a source package.
+Analyzing a commercial game through decompilation to understand implementation
+ideas is acceptable; never copy its code or assets. A mature game's behavior can
+inform an independent design; it is not a source package.
 
 ## Evaluate an existing prototype
 
