@@ -65,7 +65,8 @@ After a few focused rounds, summarize:
 
 Show the summary and ask the user to confirm or correct it. State that approval
 starts current-source public research and may use a de-identified brief with
-available read-only reviewers. A clear reply such as `确认需求` is sufficient.
+available read-only reviewers. A clear reply such as `确认需求` or
+`confirm intent` is sufficient.
 
 If the user changes the wish, revise the summary before continuing. Do not
 research until the current summary is explicitly confirmed.
@@ -120,7 +121,8 @@ Present in plain language:
 ### Gate 2: confirm the solution
 
 Ask the user to approve the recommendation and implementation scope or request
-changes. A clear reply such as `采用推荐方案，开始实现` is sufficient.
+changes. A clear reply such as `采用推荐方案，开始实现` or
+`approve and build` is sufficient.
 
 After approval, plan, implement, and verify automatically within that scope.
 Return to research or Gate 2 when a material dependency, architecture, cost,

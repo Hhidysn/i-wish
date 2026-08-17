@@ -78,8 +78,8 @@ Present one short package:
 下一步：使用公开资料调研成熟方案，并在架构完成后再次请你确认。
 ```
 
-Ask the user to reply `确认需求` or list corrections. Do not hide unresolved
-critical assumptions inside the summary.
+Ask the user to reply `确认需求` (or `confirm intent`) or list corrections. Do
+not hide unresolved critical assumptions inside the summary.
 
 ## Quality check
 

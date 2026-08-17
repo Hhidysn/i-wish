@@ -1,5 +1,7 @@
 # I Wish
 
+English | [简体中文](README.zh-CN.md)
+
 Turn a rough wish for a substantial new digital product into one the user has
 understood, approved, and seen working — research before designing, reuse before
 custom code, two confirmations, then build and prove.

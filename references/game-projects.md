@@ -26,9 +26,8 @@ Use public talks, postmortems, technical-art breakdowns, papers, and observable
 behavior to learn patterns and trade-offs. Use maintained repositories, plugins,
 templates, and licensed assets as implementation candidates.
 
-Analyzing a commercial game through decompilation to understand implementation
-ideas is acceptable; never copy its code or assets. A mature game's behavior can
-inform an independent design; it is not a source package.
+A mature game's behavior can inform an independent design; it is not a source
+package.
 
 ## Evaluate an existing prototype
 
@@ -42,17 +41,15 @@ the newly confirmed player-facing acceptance criteria and classify it:
 Preserve useful scene boundaries, interfaces, assets, or data when replacing the
 core. Avoid repeated patches after the repair hypothesis fails.
 
-## Simulation and water
+## Technically deep systems
 
-For physical water, first determine the required player interactions and visible
-proof: floating objects, currents, waves, filling spaces, destruction, or visual
-surface response. Then compare solution classes such as engine physics,
-heightfields, shallow-water methods, particles, compute simulation, or a hybrid.
+For demanding systems such as physics simulation, networking, or procedural
+generation, first pin the required player interactions and visible proof, then
+compare solution classes — engine-native, plugin, or custom — before committing.
 
-Evaluate scale, platforms, collision needs, determinism, visual coupling,
-performance budget, authoring workflow, and integration cost. A visually weak
-local implementation is not preferred over a maintained suitable plugin merely
-because it already exists.
+Evaluate scale, platforms, determinism, coupling, performance budget, authoring
+workflow, and integration cost. A weak local implementation is not preferred
+over a maintained suitable option merely because it already exists.
 
 ## Assets and content
 
