@@ -1,5 +1,7 @@
 # I Wish
 
+[English](README.md) | [简体中文](README.zh-CN.md)
+
 Shape an unsettled product request, research consequential choices, then implement
 and verify the result. See [SKILL.md](SKILL.md).
 

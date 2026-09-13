@@ -1,5 +1,7 @@
 # I Wish
 
+[English](README.md) | [简体中文](README.zh-CN.md)
+
 将尚未明确的产品愿望转化为清晰的产品方案，研究关键决策，然后实现并验证结果。详见 [SKILL.md](SKILL.md)。
 
 默认采用与任务规模相称的澄清方式，并沿用已有授权。只有在用户要求分阶段确认，或明确选择要求该流程的集成时，才启用两道审批 gate。较旧的 OpenCode 适配器仍可能强制执行 gate；便携 skill 的修改不会改变适配器代码。详见 [主机集成说明](references/host-adapters.md)。
