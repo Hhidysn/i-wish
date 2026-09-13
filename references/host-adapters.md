@@ -54,8 +54,11 @@ portable references never name adapter tools, models, paths, or states.
 
 While a wish is active, `i-wish` is the only outer owner. The adapter routes the
 lead to `i-wish`, keeps competing outer workflows from taking ownership, and
-delegates only bounded phase tasks to workers. It mirrors the core states and
-is not a second Wish Flow state machine.
+delegates only bounded phase tasks to workers. Older adapters may enforce the
+former two-gate workflow regardless of the
+portable skill default. Inspect actual adapter behavior when using that host.
+This edit does not change enforcement code. Respect an explicitly selected gated
+adapter workflow and do not silently bypass its checks.
 
 A project without `.opencode/i-wish.json` receives routing guidance only and
 inherits no unknown path policy. Allow `i-wish` for the lead agent; workers need
@@ -67,21 +70,21 @@ or deliberate edits to local state. Never present it as an unbypassable gate.
 
 ## Workers and review
 
-With no subagents, run in the lead context: write the initial architecture
-proposal first, then a separate adversarial review before the Gate 2
-recommendation; never claim independent review. With native subagents or a team
+Use proportionate local assessment or an independent reviewer when useful;
+never claim independence for the lead agent's own assessment. With native
+subagents or a team
 framework such as Oh My OpenAgent or Oh My Claude Code, let the host choose
-categories, models, and topology, give it bounded phase tasks, and keep both
-user Gates and evidence synthesis with the lead. Do not start a competing
+categories, models, and topology, give it bounded phase tasks, and keep any
+requested approval gates and evidence synthesis with the lead. Do not start a competing
 end-to-end loop such as another autopilot while I Wish owns the phase contract.
 
 ## Capability degradation
 
 - No browsing: disclose it and use only local evidence or labeled uncertainty
-  after the user chooses whether to continue.
+  while continuing useful independent work; ask only about a dependent decision.
 - No structured question tool: use a Markdown batch.
-- No workers or no multi-model review: lead performs a separate adversarial pass
-  and states that multi-model agreement was not obtained.
+- No workers: use local evidence; disclose missing independent review when it
+  matters to the decision.
 - No write/runtime access: produce a plan or user-run verification steps and
   report incomplete evidence.
 - No adapter or plugin: fall back to the plain core skill and state that
