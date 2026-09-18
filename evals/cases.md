@@ -11,6 +11,9 @@ private-data transfer. Do not load during normal tasks.
 | Senior developer supplies architecture constraints | Focus on alternatives, assumptions, failure modes, migration/lock-in/operations, and evidence rather than explaining basic concepts. |
 | User appears expert in one subsystem but delegates another | Adapt guidance per decision; do not assign one permanent skill-level persona. |
 | Implement an approved ADR, fix a known bug, explain code | No new outer design workflow. |
+| User asks only for product exploration or a proposal | Deliver that scope without starting implementation. |
+| One existing capability satisfies the relevant constraints | Do not manufacture alternative candidates or a research quota. |
+| Ordinary product shaping | Do not load installation or adapter notes. |
 | User delegates reversible details | Recommend and proceed, preserving requirements. |
 | User asks to approve intent and solution separately | Honor gates; existing explicit approvals count; silence does not. |
 | Explicitly selected adapter enforces gates | Respect actual enforcement; skill edits do not change adapter code. |

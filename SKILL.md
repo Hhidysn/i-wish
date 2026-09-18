@@ -1,56 +1,46 @@
 ---
 name: i-wish
-description: Shape a substantial new product, major feature, or redesign when requirements or consequential decisions remain unsettled. Skip small or fully specified work.
+description: Shape an underspecified product, major feature, or redesign into a buildable direction and verified result. Use when consequential product choices remain open; skip small or fully specified work.
 ---
 
 # I Wish
 
-Turn an unsettled wish into a coherent, testable result.
+Turn a rough wish into a coherent product direction and carry the requested work
+through implementation and verification. If the request is only for exploration
+or a proposal, deliver that scope.
 
-**Wish → Understand → Explore → Decide → Plan → Build → Prove → Loop.**
+## Shape the wish
 
-Treat this as a reasoning loop, not a fixed ceremony.
+Establish the intended user experience, scope, constraints, and observable
+acceptance criteria. Inspect available context before asking questions.
 
-## Decision boundary
+Ask about unresolved choices that materially change the product, cost, data
+exposure, or a difficult-to-reverse commitment. Recommend reasonable defaults
+for delegated choices and proceed with reversible details.
 
-Honor explicit choices and existing approvals. Inspect discoverable facts before
-asking the user.
+For clarification and adapting technical guidance, read
+[shaping.md](references/shaping.md).
 
-Use reasonable reversible defaults and continue independently when choices are
-delegated.
+## Resolve consequential decisions
 
-Ask only when an unresolved decision materially affects:
+Investigate uncertainty that could invalidate the product direction. Prefer
+suitable existing capabilities when they reduce total complexity; replace
+existing code when evidence favors replacement.
 
-- scope or user-visible behavior;
-- meaningful cost;
-- data exposure or permissions;
-- a difficult-to-reverse commitment.
+For consequential architecture or dependency choices, read
+[research.md](references/research.md).
+For game-specific work, read [game-projects.md](references/game-projects.md).
 
-Begin implementation once intent and scope are sufficient to act.
+## Deliver the requested result
 
-Use approval gates only when the user explicitly requests staged approval or the
-selected workflow requires them.
+Start implementation when intent and scope are sufficient to act. Honor existing
+authorization and explicitly requested approval gates, including those of an
+explicitly selected workflow.
 
-## Route
+Use coherent end-to-end slices. Revisit affected decisions when evidence
+invalidates an assumption.
 
-Read only the references relevant to the current decision:
-
-- clarification → [interview.md](references/interview.md)
-- responsibility and explanation level → [guidance.md](references/guidance.md)
-- architecture, reuse, and consequential research → [research.md](references/research.md)
-- planning, implementation, and evidence → [delivery.md](references/delivery.md)
-- game-specific decisions → [game-projects.md](references/game-projects.md)
-- host integration → [host-adapters.md](references/host-adapters.md)
-
-Prefer reuse or bounded repair when appropriate. Handle reversible implementation
-details just in time.
-
-## Complete the loop
-
-Build coherent end-to-end slices and verify material outcomes with evidence.
-
-If evidence invalidates an assumption or decision, return to the appropriate
-earlier step instead of patching around it.
-
-Do not claim research, verification, or completion that did not occur. Report
-remaining uncertainty and limitations accurately.
+Continue until the requested scope is implemented and its material acceptance
+criteria have proportionate evidence. A working first slice is a milestone, not
+completion. For interactive behavior, a successful build alone is insufficient.
+Report remaining limitations and unverified behavior.

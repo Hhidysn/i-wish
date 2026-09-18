@@ -1,100 +1,23 @@
-# Game-project guide
+# Shape and verify a game
 
-Use this reference when the wish is a game or a game-specific core subsystem.
+Start from the player promise and repeated play loop. Rendering, simulation,
+architecture, and content should serve that experience.
 
-## Game-first decisions
+Prefer suitable engine-native systems, compatible maintained plugins, and
+licensed assets before building engine-like infrastructure. Validate expensive
+assumptions early when the game depends on multiplayer authority, save
+compatibility, streaming, unusual simulation, or target-platform export.
 
-Start from the player promise and repeated play loop. Architecture, rendering,
-simulation, content, and assets serve that experience rather than becoming the
-goal themselves.
+Judge an existing prototype against player-facing acceptance criteria. Preserve
+useful scenes, interfaces, and assets when replacing a core that cannot deliver
+the promised experience.
 
-For a greenfield game, prefer:
+Choose a coherent content pipeline. Before committing to an asset pack, check
+the relevant engine/render-pipeline compatibility, scale, rigs, performance
+budget, and redistribution terms.
 
-1. engine-native systems and official examples;
-2. maintained engine-version-compatible plugins or templates;
-3. legally reusable assets and content tools;
-4. a thin project-specific integration layer;
-5. custom engine-like systems only when evidence justifies them.
-
-Check early when the wish materially depends on multiplayer authority, save
-compatibility, procedural generation, large-world streaming, advanced physics,
-unusual rendering, platform export, or a high-volume content pipeline.
-
-## Interpret proven patterns correctly
-
-Use public talks, postmortems, technical-art breakdowns, papers, and observable
-behavior to learn patterns and trade-offs. Use maintained repositories, plugins,
-templates, and licensed assets as implementation candidates.
-
-Analyzing a commercial game through decompilation to understand implementation
-ideas is acceptable; never copy its code or assets. A mature game's behavior can
-inform an independent design; it is not a source package.
-
-## Evaluate an existing prototype
-
-Do not preserve an existing system merely because it is local. Test it against
-the newly confirmed player-facing acceptance criteria and classify it:
-
-- `reuse`: it already meets the need;
-- `repair`: one bounded change is cheaper and safer than replacement;
-- `replace`: its core model or quality blocks the player promise.
-
-Preserve useful scene boundaries, interfaces, assets, or data when replacing the
-core. Avoid repeated patches after the repair hypothesis fails.
-
-## Simulation and water
-
-For physical water, first determine the required player interactions and visible
-proof: floating objects, currents, waves, filling spaces, destruction, or visual
-surface response. Then compare solution classes such as engine physics,
-heightfields, shallow-water methods, particles, compute simulation, or a hybrid.
-
-Evaluate scale, platforms, collision needs, determinism, visual coupling,
-performance budget, authoring workflow, and integration cost. A visually weak
-local implementation is not preferred over a maintained suitable plugin merely
-because it already exists.
-
-## Assets and content
-
-Search for legally reusable meshes, materials, shaders, textures, animation,
-audio, VFX, UI, and environment kits when they fit the art direction. Record
-source, license, attribution, modification, redistribution, and marketplace
-restrictions.
-
-Prefer a coherent pipeline over accumulating unrelated assets. Validate scale,
-orientation, rig, shader/render-pipeline compatibility, texture budget, audio
-format, and target-platform constraints before committing to a large pack.
-
-Generative assets need the same provenance and release checks as downloaded
-assets. Do not treat generated output as automatically risk-free.
-
-## Use host specialists without surrendering the workflow
-
-When useful and authorized, use available narrow specialists for mechanics, multiplayer,
-lighting, UI, assets, audio, performance, or export. Give each the approved
-player promise, acceptance criteria, project boundary, and allowed dependency
-scope.
-
-I Wish remains responsible for material scope changes and final evidence. If a
-specialist discovers that a core dependency or architecture must change, return
-to research; seek user input only for a material unresolved choice or a requested
-approval gate.
-
-## Verify as a game
-
-Run the actual game, not only scripts or static diagnostics. Verify:
-
-- launch and main navigation;
-- the smallest complete play loop;
-- input, camera, feedback, failure, and recovery;
-- visual and audio behavior relevant to the promise;
-- representative performance on target hardware when available;
-- save/load, networking, or host authority when required;
-- target-platform export and launch when shipping is in scope.
-
-Capture diagnostics plus direct observations, screenshots, or recordings when
-they materially strengthen the evidence. Mark target hardware or platform checks
-unverified when the required environment is unavailable.
-
-Do not declare a gameplay feature complete until someone or an authorized agent
-has exercised the behavior that proves it.
+Verify the smallest complete play loop in the running game, including the input,
+camera, feedback, failure, and recovery behavior relevant to the request. Check
+save/load, networking, performance, and platform export when they are in scope.
+Record useful observations or captures and identify unavailable hardware or
+platform checks as unverified.
