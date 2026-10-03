@@ -52,6 +52,9 @@ portable references never name adapter tools, models, paths, or states.
 - machine checkpoint: `<project>/.slim/i-wish/<workflow-id>.json`, adapter
   cache only, not human history.
 
+Portable evidence gates are agent instructions, not tool-level enforcement.
+Changing the skill does not add enforcement hooks or modify an existing adapter.
+
 While a wish is active, `i-wish` is the only outer owner. The adapter routes the
 lead to `i-wish`, keeps competing outer workflows from taking ownership, and
 delegates only bounded phase tasks to workers. Older adapters may enforce the
@@ -80,8 +83,9 @@ end-to-end loop such as another autopilot while I Wish owns the phase contract.
 
 ## Capability degradation
 
-- No browsing: disclose it and use only local evidence or labeled uncertainty
-  while continuing useful independent work; ask only about a dependent decision.
+- No browsing: disclose it and continue useful independent work with applicable
+  local evidence. Missing adoption evidence keeps dependent implementation
+  blocked under the research gate; uncertainty labels alone do not pass it.
 - No structured question tool: use a Markdown batch.
 - No workers: use local evidence; disclose missing independent review when it
   matters to the decision.
