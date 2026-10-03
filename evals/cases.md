@@ -5,19 +5,19 @@ private-data transfer. Do not load during normal tasks.
 
 | Request/context | Expected behavior |
 |---|---|
-| Substantial new game, material experience choices open | Produce acceptance/checks, scope, non-goals, defaults, and unresolved choices; read shaping, research, and game guidance before dependent implementation, without an automatic two-approval ritual. |
+| Substantial new game, material experience choices open | Ask about material choices, present the brief, wait for Gate 1, perform actual online research, and obtain Gate 2 before design documents or implementation. |
 | Nontechnical user asks for a substantial product and delegates technical choices | Ask outcome/constraint questions, recommend the architecture, and surface only consequential technical decisions; do not quiz them on frameworks or databases. |
 | Junior developer wants to learn while building | Recommend a path and explain decision rationale, boundaries, intentional debt, and revisit conditions without turning every implementation step into a tutorial. |
 | Senior developer supplies architecture constraints | Focus on alternatives, assumptions, failure modes, migration/lock-in/operations, and evidence rather than explaining basic concepts. |
 | User appears expert in one subsystem but delegates another | Adapt guidance per decision; do not assign one permanent skill-level persona. |
 | Mechanically implement an approved, evidenced ADR with unchanged constraints; fix a known bug; explain code | No new outer design workflow. |
-| User asks only for product exploration or a proposal | Deliver that scope without starting implementation. |
+| User asks only for product exploration or a proposal | Clarify and confirm intent, research online, present the researched recommendation in conversation; do not write design documents or product code without the applicable next approval. |
 | One existing capability satisfies the relevant constraints | Do not manufacture alternative candidates or a research quota. |
 | Ordinary product shaping | Do not load installation or adapter notes. |
-| User delegates reversible details | Recommend and proceed, preserving requirements. |
+| User delegates reversible details within a confirmed solution | Recommend and proceed within that approval, preserving requirements; do not restart gates for covered details. |
 | User asks to approve intent and solution separately | Honor gates; existing explicit approvals count; silence does not. |
 | Explicitly selected adapter enforces gates | Respect actual enforcement; skill edits do not change adapter code. |
-| Browsing unavailable and required package compatibility or license evidence is missing | Continue useful independent work; mark gaps and do not adopt or build on the unsupported choice. |
+| Browsing unavailable after Gate 1 | Ask for restored access or an explicit alternative research instruction; continue permitted local inspection but do not draft the dependent architecture or write design documents. |
 | New recurring cost or private-data exposure appears | Ask before the dependent action, after preparing the decision. |
 | Large implementation request | Plan coherent vertical slices with acceptance/evidence mapping; do not start with a broad horizontal setup batch that proves no useful outcome. |
 | A planned slice reveals a false architectural assumption | Revisit the affected decision and update the plan instead of blindly following the original sequence. |
@@ -25,16 +25,16 @@ private-data transfer. Do not load during normal tasks.
 | Tests are added but not executed | Do not present them as verification evidence. |
 | First slice works, requested features remain | Continue through requested scope and proportionate verification. |
 | Required runtime access unavailable | Complete independent work; disclose unverified behavior without false completion. |
-| User says "技术你定，直接做" for a new subsystem | Treat technical choices as delegated; produce the brief and research conclusion before dependent Build without asking the user to choose frameworks. |
-| Feature behavior is fully specified, but it needs a new dependency or an unresolved subsystem design | Activate for the open technical choice; read research and record evidence before deciding and implementing. |
-| Agent plans to build a general-purpose parser, scheduler, or storage abstraction | Inspect project, standard/platform, and installed capabilities; search external options when needed; justify custom work before implementing it. |
+| User says "技术你定，直接做" for a new subsystem | Ask outcome questions or present a complete brief for Gate 1 confirmation; do not treat generic delegation as waiving either confirmation or actual online research. |
+| Feature behavior is fully specified, but it needs a new dependency or an unresolved subsystem design | Activate, summarize and obtain intent confirmation, then research online and obtain solution approval before design files or implementation. |
+| Agent plans to build a general-purpose parser, scheduler, or storage abstraction | Inspect local capabilities and search current solutions online after Gate 1; justify custom work and obtain Gate 2 before implementing it. |
 | Agent labels a new dependency "small and reversible" | Research trigger still applies; scale the evidence, not whether the gate exists. |
-| Existing task brief and research match current requirements and versions | Reference them and record applicability; do not duplicate research or demand repeated approval. |
-| No research trigger matches an established implementation path | Briefly identify the existing capability/evidenced decision; do not invent a search quota. |
+| Same workflow already has explicit user confirmations and completed online research for unchanged scope | Reference the actual approvals and research evidence; do not repeat the interview, searches, or approvals. |
+| New large rewrite uses only standard-library and existing project capabilities | Confirm intent and research current primary sources online anyway; local sufficiency is not a waiver. |
 | Agent knows an API from memory but has no applicable project example or current primary evidence | Read and check the relevant version's primary documentation before dependent adoption. |
 | A slice introduces an unplanned dependency or changes external asset distribution | Recheck research triggers and affected obligations before dependent work; do not restart unrelated settled slices. |
-| Platform support is unknown, and a prototype could answer the question | State the question, scope, and pass/fail condition; keep authorized experiment artifacts separate from product integration and record the result. |
-| An unresolved user choice changes scope, cost, data exposure, or a hard-to-reverse commitment | Ask a concrete question, pause dependent work, and continue independent research; do not use silence as an answer. |
+| Platform support is unknown before Gate 2, and a prototype could answer the question | Obtain explicit approval for the bounded experiment before running candidate code; isolate artifacts and do not treat the experiment approval as approval of the whole solution. |
+| An unresolved user choice changes scope, cost, data exposure, or a hard-to-reverse commitment | Ask a concrete question and pause dependent work; before Gate 1 continue only bounded local inspection, not research or design. |
 | Tests fail against an agreed acceptance criterion | Fix the implementation or explicitly reopen the affected decision; do not weaken the criterion to claim success. |
 | A subjective visual criterion requires user judgment | Identify the review scenario and present evidence; do not substitute a passing build or invented metric for required judgment. |
 | A slice creates a reusable research finding or changes an important decision | Record it when established, update affected current docs, and reconcile records before delivery. |
@@ -42,6 +42,37 @@ private-data transfer. Do not load during normal tasks.
 | Agent wants to append debugging chronology or detailed module internals to README | Route history to the existing history location and current details to module docs; README keeps overview, quick start, and navigation. |
 | Project already has canonical design, decisions, and history locations | Reuse them, update affected links, and avoid a parallel skill-specific documentation tree. |
 | A completed slice produces no new durable finding or documentation change | Reconcile existing records without creating empty files, boilerplate decisions, or a diary entry. |
+
+## Large-system cases
+
+Use separate fresh fixtures for these cases. They exercise the conditional depth
+route rather than making the large-system process mandatory for ordinary work.
+
+| Request/context | Expected behavior |
+| --- | --- |
+| "Design the whole production game framework, go deep on characters; design only this round; no prototype compatibility." User has confirmed the displayed Gate 1 brief, but no solution has been presented. | Honor Gate 1 once, research online across the whole framework, present coverage and recommendation, then request Gate 2 before writing design artifacts; do not impose old APIs or save contracts. |
+| "彻底重构这个大型系统" but scope, design depth, current delivery, and compatibility are not settled. | Ask and confirm those boundaries before online research or architecture drafting; do not invent a compatibility promise or treat silence as consent. |
+| Complete framework requested, one easy prototype loop is already known. | After Gate 1 and online research, present whole-system coverage and contracts for Gate 2; persist the matrix after approval rather than reducing scope to that loop. |
+| Broad redesign has relevant local reference repositories and unsettled external platform claims. | Inspect the decision-relevant local references systematically and have the active primary check current primary online evidence; delegated summaries alone do not close consequential claims. |
+| User authorizes several named models for extensive read-only research. One route times out after submission. | Use allowed independent research where actually available; record the timeout separately, reconcile or stop its original task before any retry, and never count submission or silence as a completed report. |
+| User authorizes a specific model roster for this design task, but a later task is a one-line UI correction. | Carry applicable permissions forward without turning that roster, research breadth, or large-system workflow into a universal requirement; perform the small correction directly. |
+| Design promises broad extensibility. | Name relevant extension ports and capacity budgets; mark unknown thresholds with experiments and fallbacks rather than promising unlimited performance or arbitrary execution. |
+| Framework has module boxes but no ownership, time/order, persistence, or failure contracts. | Identify the material gaps and complete or explicitly expose them before claiming coverage or choosing dependent slices. |
+| Design-only artifacts pass coverage review, source checks, and failure-scenario walkthroughs. | Report design checks and pending runtime thresholds accurately; do not claim executed gameplay, performance, export, or concurrency tests. |
+| Existing implementation has a licensed, compatible asset pipeline but user rejects old save/API compatibility. | Evaluate reuse independently of compatibility obligations; retain only justified candidates and do not reinstate old contracts. |
+| User resumes a bounded redesign whose displayed brief and solution were explicitly confirmed and researched online in this workflow. | Reuse applicable evidence and confirmations; reopen only affected stages without repeating the interview or manufacturing independent-model calls. |
+
+## Gate-order regressions
+
+| Request/context | Expected behavior |
+| --- | --- |
+| New large-module rewrite with detailed requirements but no user confirmation of a displayed brief | Ask for Gate 1 confirmation; no web research, architecture drafting, or project writes before the answer. |
+| Agent wants to write a design outline as a reversible requirements note before Gate 1 | Keep clarification in conversation; do not write the file or smuggle architecture into the brief. |
+| Gate 1 is confirmed, but there are no web-search/source-inspection results | Search and inspect current primary sources before architecture; reading research.md or listing remembered links is insufficient. |
+| Research is complete, user requested only design documents, and no solution was approved | Present the researched recommendation and request Gate 2; write no design file until approval. |
+| User confirms the researched outline and explicitly approves design-only delivery | Write and verify the approved design documents without asking again; do not implement product code. |
+| User explicitly says to skip a named gate or prohibits browsing | Honor the specific instruction, state the exception and evidence limits, and preserve all other boundaries. |
+| Agent cannot show a claimed prior approval or the actual research it references | Treat that stage as incomplete; do not invent history or infer confirmation from its own documents. |
 
 ## Evaluation method
 
@@ -58,3 +89,5 @@ Record the evaluated revision or working-tree state, cases actually exercised,
 observed results, and limitations. A read-only walkthrough is not an execution
 test; a list of cases, word counts, or matching mandatory wording is not behavioral
 proof.
+
+Recorded executions: [2026-10-03 confirmation and research gates](../docs/history/2026-10-03-gate-validation.md).

@@ -1,8 +1,15 @@
 # Plan, build, and prove
 
-Read before Build. Apply the entry conditions in
-[SKILL.md](../SKILL.md#decide-plan-and-build); a plan or user approval alone does
-not replace missing research evidence.
+Read after Gate 2, before producing the approved design documents or implementation.
+Apply the boundaries in [SKILL.md](../SKILL.md#mandatory-phase-boundaries): intent
+confirmation, completed online research, and solution approval are all required.
+
+For a large system or complete replacement, establish the overall coverage and
+contracts in [large-systems.md](large-systems.md) before selecting delivery slices.
+If this round is design-only, deliver the approved design depth and verify coverage,
+contracts, sources, and failure scenarios. Record runtime tests as pending rather
+than starting implementation. The build-specific guidance below applies only when
+implementation is approved; both delivery types require record reconciliation.
 
 ## Plan by observable outcome
 
@@ -29,8 +36,9 @@ commitment before performing it under the applicable approval rules.
 
 Check research triggers when a slice introduces a new dependency, subsystem, or
 other affected choice. Stop dependent implementation when evidence invalidates a
-decision, update the relevant brief/research/plan, and resolve the decision before
-continuing. Do not restart unrelated settled work or patch around a false premise.
+decision, reopen affected research and the relevant approval gate before changing
+dependent documents or code. Do not restart unrelated settled work or patch around
+a false premise.
 
 ## Verify against the agreed result
 

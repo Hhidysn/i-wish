@@ -1,6 +1,10 @@
 # Preserve decisions and current documentation
 
-Read before writing project decisions or documentation. Use the project's
+Read before writing project decisions or documentation. Before Gate 2, keep the
+brief, research findings, and recommendation in the conversation; documentation
+rules do not authorize early design files or project edits. After approval,
+record the confirmed brief, user confirmations, and research provenance once.
+Use the project's
 existing conventions and canonical files first. The locations below are defaults
 when no convention exists; create only files that have useful content. Start with
 one feature note when that is sufficient, and split it only when needed. Do not

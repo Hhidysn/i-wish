@@ -1,4 +1,4 @@
 interface:
   display_name: "I Wish"
-  short_description: "Define success, research, build, verify, and preserve decisions"
-  default_prompt: "Use $i-wish to define success for my product wish, research the choices before implementation, verify the result, and preserve decisions and current documentation."
+  short_description: "Confirm intent, research online, approve, deliver, and verify"
+  default_prompt: "Use $i-wish to clarify and confirm my wish, research current sources online, and get my approval of the solution before writing design documents or implementation."
