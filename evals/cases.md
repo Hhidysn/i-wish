@@ -115,4 +115,5 @@ Recorded executions: [2026-10-03 confirmation and research gates](../docs/histor
 [2026-10-05 refactor checks](../docs/history/2026-10-05-skill-refactor-validation.md),
 [2026-10-05 council-fix probes](../docs/history/2026-10-05-council-fix-validation.md),
 [2026-10-05 external-practice checks](../docs/history/2026-10-05-external-practices.md),
-and [2026-10-05 restore checks](../docs/history/2026-10-05-restore-from-982af82.md).
+[2026-10-05 restore checks](../docs/history/2026-10-05-restore-from-982af82.md),
+and [2026-10-05 documentation-practice checks](../docs/history/2026-10-05-doc-note-practices.md).

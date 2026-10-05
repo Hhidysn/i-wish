@@ -54,6 +54,12 @@ Keep each fact in one canonical place and link to it elsewhere.
 - Write the current truth of the implemented product and mark planned behavior.
 - Keep the glossary mapping the user's words to canonical terms, so the product,
   the docs, and the conversation use the same vocabulary.
+- Decision records list the alternatives actually considered: state each one's
+  strongest case before the reason it lost, and include doing nothing. Consequences
+  name the ongoing cost or limitation as well as the benefit; benefits alone leave
+  the record incomplete. A direction that was separately proposed and dropped is
+  recorded as rejected or folded into the surviving record's alternatives, never
+  left only in conversation.
 
 ## Preserve during work, reconcile before completion
 

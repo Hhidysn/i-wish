@@ -74,11 +74,26 @@ rather than "能力族").
 # <Decision title>
 
 Date: YYYY-MM-DD
-Status: Proposed | Accepted | Superseded by NNNN
+Status: Proposed | Accepted | Rejected | Superseded by NNNN
 
 ## Context
 ## Decision
+
+State the shipped reality in present tense once implemented.
+
+## Alternatives considered
+
+<Alternative> - strongest reason to choose it: <benefit>.
+Rejected because <why>.
+
+Do nothing / keep the current approach - strongest reason: <benefit>.
+Rejected because <why>.
+
 ## Consequences and validation
+
+- <positive result>
+- <ongoing cost, limitation, or tradeoff>
+- <check or verification that now protects the decision>
 ```
 
 Optional fields when they help: user-visible impact; conditions for revisiting;
