@@ -107,8 +107,10 @@ Before Gate 2, a prototype or running candidate code requires explicit approval
 of that bounded experiment. State its question, scope, and pass/fail condition;
 keep it outside the active project and report what it established. Screen
 candidates remotely first; download a shortlist only when local inspection
-changes the decision, pinned and outside the project. Disclose large downloads
-and clean up.
+changes the decision, into a temporary directory on a volume with adequate free
+space (prefer a non-system volume), pinned, outside the project and Skill, without
+needless history, LFS, caches, or build output. Disclose large downloads and
+clean up.
 
 After the research conclusion, present the recommendation in plain language and
 obtain Gate 2 approval before writing design documents or implementation. New
