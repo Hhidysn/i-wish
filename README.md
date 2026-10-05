@@ -14,8 +14,9 @@ Invoke `$i-wish` with the desired outcome and known constraints. It first asks
 clarifying rounds of 3–4 questions, each with a recommended default, and obtains
 confirmation of the intent, then searches current solutions online and inspects
 primary sources. It presents a recommendation for
-your approval before writing design documents or implementation. Approved work is
-delivered, verified, and recorded under the project's documentation conventions.
+your approval before writing design documents or implementation. Approved work
+moves through plan, execute, verify, and ship, then is recorded under the
+project's documentation conventions.
 
 Both confirmation gates and online research are required by default, including
 design-only requests. Delegating technical choices does not waive them. Existing

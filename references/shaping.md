@@ -29,6 +29,14 @@ operating context such as platform, offline use, collaboration, privacy, and dat
 exposure; cost and constraints; observable acceptance. Do not let a scope or
 solution decision masquerade as an experience question.
 
+For a technical subsystem, ask what it enables, what the user repeatedly does
+with it, who it serves, and which visible moment proves it works. If answers
+conflict, name the conflict and ask one focused question.
+
+Before sending a round, check that a non-developer can answer without research,
+options describe effects rather than technologies, recommendations follow known
+preferences, and no question depends on another's answer.
+
 Each question offers concrete options where possible, a recommended default, and
 the consequence of choosing wrong. Close the round with "全部采用推荐" (adopt all
 recommended defaults) as a one-line answer. Ask decisions, not facts: look up what

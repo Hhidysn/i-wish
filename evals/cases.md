@@ -57,6 +57,9 @@ private-data transfer. Do not load during normal tasks.
 | User writes a generic "我想要…" / "帮我做个…" with no substantial scope or unsettled choices | Do not activate on the phrase alone; handle as a normal request. |
 | Outcome-only Chinese wish for a new module, project, or refactor | Activate; ask effect-level questions, not mechanism choices. |
 | Non-developer asks for a review, status, or final report | Material decisions and final results use the effect-first frame; routine updates stay one line; commands and paths appear only in verification steps, after the effect. |
+| Implementation is delivered with no independent reviewer available | Say that verification shares the implementer's context; do not claim independence. |
+| A behavior change passes a check that never failed | State that the check proves less than a fail-then-pass check. |
+| A wish is interrupted or spans sessions | Leave a handoff in the existing task/feature record: goal, done, decisions by reference, verification state, remaining risk, next step. |
 
 ## Full-scope cases
 
@@ -110,4 +113,6 @@ proof.
 
 Recorded executions: [2026-10-03 confirmation and research gates](../docs/history/2026-10-03-gate-validation.md),
 [2026-10-05 refactor checks](../docs/history/2026-10-05-skill-refactor-validation.md),
-and [2026-10-05 council-fix probes](../docs/history/2026-10-05-council-fix-validation.md).
+[2026-10-05 council-fix probes](../docs/history/2026-10-05-council-fix-validation.md),
+[2026-10-05 external-practice checks](../docs/history/2026-10-05-external-practices.md),
+and [2026-10-05 restore checks](../docs/history/2026-10-05-restore-from-982af82.md).

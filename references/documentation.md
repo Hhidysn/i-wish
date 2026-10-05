@@ -20,6 +20,7 @@ not create a parallel I Wish history tree or duplicate the same evidence.
 | Reusable research evidence | `docs/research/<topic>.md` or the relevant decision/feature note | Include check date, versions, sources, recommendation, and unresolved assumptions. |
 | Shared vocabulary: the user's words, canonical terms, where each appears in the product | `docs/glossary.md` or the existing domain/context document | Create only when the project has domain terms or user words differ from canonical ones; one canonical term per concept; link instead of redefining. |
 | Active scope, slices, and verification progress | Existing task/feature record | Keep current; link to canonical requirements and evidence rather than copying them. |
+| Cross-session or interrupted-work handoff | Existing task/feature record | Reference canonical docs instead of copying; keep secrets and personal data out. |
 | Superseded designs, completed temporary plans, iteration records | Existing history directory, otherwise `docs/history/` | Archive useful history and repair incoming links; keep it out of current usage/design docs. |
 | User-facing release changes | Existing `CHANGELOG.md` | Follow its conventions; use commits for implementation chronology rather than duplicating a work diary. |
 

@@ -40,6 +40,9 @@ slice, identify:
 - how to revert or isolate the change if its hypothesis fails;
 - the result that would invalidate the current decision.
 
+Give each slice its blocking prerequisites, do shared groundwork first, and size
+a slice to complete and verify in one fresh context.
+
 Keep the plan in the existing task or feature record. Detail risky sequencing,
 migrations, and public boundaries; leave replaceable implementation details until
 needed. A broad setup batch that demonstrates no useful outcome is not a first
@@ -65,6 +68,15 @@ reproduction steps, diagnostics, interaction, screenshots, or runtime inspection
 Build and typecheck results cannot establish interactive or integration behavior.
 For subjective criteria, obtain the planned review evidence and identify any
 required user judgment still pending.
+
+Where the host offers an independent reviewer, check the work on two separate
+axes: does it match the confirmed intent and acceptance criteria, and does it
+follow the project's standards? Keep the two findings separate; do not merge or
+average them. If verification shares the implementer's context, say so instead
+of claiming independence.
+
+For a behavior change or defect fix, prefer seeing the check fail before the
+change and pass after it; a check that never failed proves less.
 
 Record the tested revision/build or working-tree state, the checks actually run,
 their results, and uncovered criteria. Written but unexecuted tests are not proof.

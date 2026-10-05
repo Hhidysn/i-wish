@@ -10,8 +10,8 @@ Deliver only the requested kind of result: research, design, or implementation.
 Use for a new project, module, or module refactor whose solution is not settled;
 skip small edits and mechanical implementation of an established, evidenced design.
 
-**Clarify → Gate 1: confirm intent → Research online → Recommend → Gate 2:
-confirm solution → Deliver → Prove → Preserve.**
+**Clarify → Gate 1: confirm intent → Research before design → Recommend →
+Gate 2: confirm solution → Plan → Execute → Verify → Ship.**
 
 Use [templates.md](references/templates.md) for briefs, recommendations,
 conclusions, reports, and records; user-facing text follows the contract below.
@@ -110,7 +110,7 @@ scope. For design-only work, approval authorizes the agreed design documents and
 depth, not product code. For implementation, it authorizes the agreed build scope.
 Wait for an explicit answer before writing either deliverable.
 
-## Deliver, prove, and preserve
+## Plan, execute, verify, and ship
 
 After Gate 2, read [delivery.md](references/delivery.md) before delivering the
 approved design or implementation, and [documentation.md](references/documentation.md)

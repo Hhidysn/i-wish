@@ -6,6 +6,12 @@ requires actual current-source online research before architecture/design drafti
 including design-only work and requests that introduce no external dependency.
 Do not choose the architecture first and add supporting links afterward.
 
+Decompose the wish into the decisions the solution must settle. Research deeply
+when a decision is hard to reverse or affects security, data, public formats,
+architecture, recurring cost, platforms, performance, licensing, or much future
+content; handle replaceable commodity parts just in time. Start from requirements
+and acceptance criteria, not a favored package name.
+
 For a new project, new module, or module refactor, research and compare against
 the whole agreed scope: map each required capability family to its decision and
 evidence instead of reducing research to the first feature the agent knows how to
@@ -27,8 +33,9 @@ invented citations, and model memory are not source inspection.
 
 Compare plausible solution classes only on dimensions that can change the
 recommendation: acceptance coverage, compatibility, integration and maintenance
-cost, performance, verification effort, licensing, operating cost, data exposure,
-and replacement difficulty. Include custom implementation when it can reduce
+cost, performance, security, permissions, native binaries, supply chain,
+verification effort, licensing, operating cost, data exposure, and replacement
+difficulty. Include custom implementation when it can reduce
 total complexity. Explain why available solutions fail relevant constraints or
 cost more overall before choosing custom work. Do not pad a candidate list or
 require alternatives to an already evidenced, adequate capability.
@@ -65,6 +72,18 @@ note alone does not waive online research for a new wish. Recheck changed claims
 Separate learning from reuse: a talk, article, or observed product behavior can
 inform a design without granting rights to copy its code or assets. Check actual
 license and distribution obligations before incorporating external artifacts.
+Flag copyleft, non-commercial, no-derivatives, source-available, marketplace,
+custom, and unclear terms; carry attribution, NOTICE, source-offer, and
+provenance duties into project and release docs. Never adopt a candidate whose
+identity, license, maintenance, or compatibility is known only from memory.
+
+Keep research queries and reviewer briefs de-identified; never send private
+project or user data to an external service without explicit authorization.
+
+When no independent reviewer is available, freeze the first proposal and run an
+explicit adversarial pass against its weakest assumptions; decide by evidence,
+not by vote. A challenge must end in a revision, more research, or a disclosed
+risk.
 
 ## Close the gate or isolate the unknown
 
@@ -86,8 +105,10 @@ report the resulting limits.
 
 Before Gate 2, a prototype or running candidate code requires explicit approval
 of that bounded experiment. State its question, scope, and pass/fail condition;
-keep it outside the active project and report what it established. Download source
-only when local inspection adds value, keeping research copies outside the project.
+keep it outside the active project and report what it established. Screen
+candidates remotely first; download a shortlist only when local inspection
+changes the decision, pinned and outside the project. Disclose large downloads
+and clean up.
 
 After the research conclusion, present the recommendation in plain language and
 obtain Gate 2 approval before writing design documents or implementation. New
