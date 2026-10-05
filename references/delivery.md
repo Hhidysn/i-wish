@@ -1,15 +1,33 @@
 # Plan, build, and prove
 
-Read after Gate 2, before producing the approved design documents or implementation.
+Read the coverage section before proposing a solution (Gate 2); read the rest
+after Gate 2, before producing the approved design documents or implementation.
 Apply the boundaries in [SKILL.md](../SKILL.md#mandatory-phase-boundaries): intent
 confirmation, completed online research, and solution approval are all required.
 
-For a large system or complete replacement, establish the overall coverage and
-contracts in [large-systems.md](large-systems.md) before selecting delivery slices.
-If this round is design-only, deliver the approved design depth and verify coverage,
-contracts, sources, and failure scenarios. Record runtime tests as pending rather
-than starting implementation. The build-specific guidance below applies only when
+For a new project, module, or refactor, establish the overall coverage and
+contracts below before selecting delivery slices. If this round is design-only,
+deliver the approved design depth and verify coverage, contracts, sources, and
+failure scenarios. Record runtime tests as pending rather than starting
+implementation. The build-specific guidance below applies only when
 implementation is approved; both delivery types require record reconciliation.
+
+## Cover the system before slicing
+
+Map each required capability family to its owner/boundary, inputs and outputs,
+dependencies or extension ports, acceptance scenario, and evidence state
+(sourced, inferred, open, needs experiment). Keep this matrix in the task or
+feature record.
+
+Connect the major parts with the contracts that matter: interface and data
+ownership, identity, schemas, versioning, extension ports; authority, permissions,
+isolation, trust; time, concurrency, ordering, cancellation, transactions, retry;
+persistence, recovery, migrations or reset, lifecycle; resource budgets, streaming,
+networking, caching, content and tool pipelines; diagnostics, test seams, target
+platforms, failure behavior. A module box does not establish its contract. Use
+representative end-to-end scenarios to expose unresolved gaps before approval, and
+track unproven thresholds with a hypothesis, decisive check, pass/fail target, and
+fallback.
 
 ## Plan by observable outcome
 

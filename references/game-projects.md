@@ -18,10 +18,11 @@ compatibility boundary. A clean replacement need not preserve prototype APIs or
 architecture; retain an artifact only when it fits the intended experience and
 its license and integration cost are acceptable.
 
-For a complete game framework, apply [large-systems.md](large-systems.md) before
-choosing a play slice. Cover the requested player, world, rules, content, AI,
-persistence, and presentation systems with their authority and runtime contracts.
-Depth follows the confirmed scope; do not reduce the framework to one known demo.
+For a complete game framework, establish whole-scope coverage and contracts under
+[delivery.md](delivery.md) before choosing a play slice. Cover the requested
+player, world, rules, content, AI, persistence, and presentation systems with
+their authority and runtime contracts. Depth follows the confirmed scope; do not
+reduce the framework to one known demo.
 
 Choose a coherent content pipeline. Before committing to an asset pack, check
 the relevant engine/render-pipeline compatibility, scale, rigs, performance

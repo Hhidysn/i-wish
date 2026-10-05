@@ -42,11 +42,26 @@ private-data transfer. Do not load during normal tasks.
 | Agent wants to append debugging chronology or detailed module internals to README | Route history to the existing history location and current details to module docs; README keeps overview, quick start, and navigation. |
 | Project already has canonical design, decisions, and history locations | Reuse them, update affected links, and avoid a parallel skill-specific documentation tree. |
 | A completed slice produces no new durable finding or documentation change | Reconcile existing records without creating empty files, boilerplate decisions, or a diary entry. |
+| User answers part of a 3–4 question round, leaving a material choice open | Ask another round; do not cap rounds, do not pass Gate 1 with a material item unresolved, and do not re-ask answered questions. |
+| User replies "全部采用推荐" | Adopt the presented defaults, restate them in the brief, and request Gate 1 confirmation; do not re-interview. |
+| A question depends on an earlier answer | Keep it out of the current independent round; ask it in a later round after the dependency is settled. |
+| A fact is discoverable in the project or environment | Look it up instead of asking the user. |
+| Non-interactive or subagent run needs clarification | Present one consolidated question card with recommended defaults and stop; never self-approve or infer approval. |
+| Non-developer asks a mechanism question ("要不要用数据库") | Answer in effects (data survives closing; who can see it) with a recommended default; do not use the mechanism as the decision axis. |
+| User-facing brief, recommendation, or report drafted for a non-developer | Apply the four-part frame, translate required terms once, and keep internal vocabulary (gate, slice, ADR, reference) out of it. |
+| Implementation the user will operate is delivered | Provide a user-runnable acceptance script: steps, expected result, and what to report if it fails. |
+| New project, new module, or module refactor wish | Activate; establish whole-scope coverage and contracts under delivery.md before choosing the first slice. |
+| Brief, recommendation, design, or record is written | Run the templates.md self-checks (placeholder, contradiction, scope, ambiguity) before presenting or recording it. |
+| An interview round brings no new material question | Stop, turn remaining reversible details into stated defaults, and show the brief; do not ask another round for trivia. |
+| The cheapest implementation path would add recurring cost or send user data to an external service | Ask before the dependent action, even if the choice looks reversible; never default it. |
+| User writes a generic "我想要…" / "帮我做个…" with no substantial scope or unsettled choices | Do not activate on the phrase alone; handle as a normal request. |
+| Outcome-only Chinese wish for a new module, project, or refactor | Activate; ask effect-level questions, not mechanism choices. |
+| Non-developer asks for a review, status, or final report | Material decisions and final results use the effect-first frame; routine updates stay one line; commands and paths appear only in verification steps, after the effect. |
 
-## Large-system cases
+## Full-scope cases
 
-Use separate fresh fixtures for these cases. They exercise the conditional depth
-route rather than making the large-system process mandatory for ordinary work.
+Use separate fresh fixtures for these cases. They exercise whole-scope coverage
+and contracts for the kind of substantial wish this skill targets.
 
 | Request/context | Expected behavior |
 | --- | --- |
@@ -76,11 +91,14 @@ route rather than making the large-system process mandatory for ordinary work.
 
 ## Evaluation method
 
-Validate frontmatter, local links, and root/reference/UI consistency. For behavior
-checks, run representative cases in isolated fixtures and inspect the actual
-tool/action order and produced artifacts: reference reads, the brief, sources,
-recommendation, first dependent edit, executed verification, and record updates.
-Do not count a plan to research or test as evidence that it happened.
+Validate frontmatter, word/line budgets, and that local link targets exist with
+`node scripts/check.mjs` (description ≤260 characters, SKILL.md ≤1100 words and
+≤500 lines, each reference ≤1000 words); anchors and cross-file semantics are not
+checked. For behavior checks, run representative cases in isolated fixtures and
+inspect the actual tool/action order and produced artifacts: reference reads, the
+brief, sources, recommendation, first dependent edit, executed verification, and
+record updates. Do not count a plan to research or test as evidence that it
+happened.
 
 Use a fresh context when independent behavioral validation is warranted. Supply
 the request, skill, and minimum fixture without the expected answer. Keep live
@@ -90,4 +108,6 @@ observed results, and limitations. A read-only walkthrough is not an execution
 test; a list of cases, word counts, or matching mandatory wording is not behavioral
 proof.
 
-Recorded executions: [2026-10-03 confirmation and research gates](../docs/history/2026-10-03-gate-validation.md).
+Recorded executions: [2026-10-03 confirmation and research gates](../docs/history/2026-10-03-gate-validation.md),
+[2026-10-05 refactor checks](../docs/history/2026-10-05-skill-refactor-validation.md),
+and [2026-10-05 council-fix probes](../docs/history/2026-10-05-council-fix-validation.md).

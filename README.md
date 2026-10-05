@@ -11,8 +11,9 @@ architecture, or reuse choices remain open or delegated, even when the desired
 behavior is clear. See [SKILL.md](SKILL.md).
 
 Invoke `$i-wish` with the desired outcome and known constraints. It first asks
-clarifying questions and obtains confirmation of the intent, then searches current
-solutions online and inspects primary sources. It presents a recommendation for
+clarifying rounds of 3–4 questions, each with a recommended default, and obtains
+confirmation of the intent, then searches current solutions online and inspects
+primary sources. It presents a recommendation for
 your approval before writing design documents or implementation. Approved work is
 delivered, verified, and recorded under the project's documentation conventions.
 
@@ -23,13 +24,22 @@ change the workflow. These are agent instructions, not tool-level enforcement.
 
 Runtime guidance: [shaping](references/shaping.md),
 [research](references/research.md), [delivery](references/delivery.md),
-[documentation](references/documentation.md), and
-[games](references/game-projects.md). For complete frameworks and major replacements,
-use [large systems](references/large-systems.md) to settle delivery/compatibility
-and establish overall coverage before slicing. Read only the applicable references.
-See [host integration](references/host-adapters.md) for installation and adapter
-behavior, [behavioral cases](evals/cases.md) for development checks, and
-[workflow decisions](docs/decisions/0001-confirm-before-design.md) for rationale. Separate
-copies and host installations are not automatically synchronized.
+[documentation](references/documentation.md),
+[plain language](references/plain-language.md),
+[templates](references/templates.md), and
+[games](references/game-projects.md). New projects, modules, and refactors
+establish whole-scope coverage and contracts under delivery before the first
+slice. Read only the applicable references.
+See [behavioral cases](evals/cases.md) for development checks and
+[workflow decisions](docs/decisions/0001-confirm-before-design.md) for rationale.
+
+## Install
+
+Copy or link this directory into the host's skills location: Codex reads
+`~/.agents/skills/i-wish` (project: `.agents/skills/i-wish`), Claude Code reads
+`~/.claude/skills/i-wish`, and OpenCode reads `~/.config/opencode/skills/i-wish`
+or `.opencode/skills/i-wish`. Invoke with `$i-wish` or `/i-wish`. Gates are
+behavioral instructions, not host enforcement; keep one source copy and link it
+instead of maintaining divergent copies.
 
 [MIT](LICENSE) © 2026 Hhidysn

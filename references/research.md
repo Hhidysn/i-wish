@@ -6,6 +6,14 @@ requires actual current-source online research before architecture/design drafti
 including design-only work and requests that introduce no external dependency.
 Do not choose the architecture first and add supporting links afterward.
 
+For a new project, new module, or module refactor, research and compare against
+the whole agreed scope: map each required capability family to its decision and
+evidence instead of reducing research to the first feature the agent knows how to
+build. Use authorized specialists when they improve coverage; the lead checks
+decision-driving sources and owns synthesis. A submitted task, silence, or a
+timeout is not a completed finding; reconcile or stop an orphaned task through
+the host's controls before retrying.
+
 ## Inspect existing solutions first
 
 Start from acceptance criteria and project constraints. Inspect relevant project
@@ -62,7 +70,9 @@ license and distribution obligations before incorporating external artifacts.
 
 Research is sufficient when the constraints driving the recommendation have
 evidence from inspected sources, the conclusion is shown, and remaining uncertainty has a practical
-validation path. A missing fact that could disqualify adoption, such as license
+validation path. Track unproven thresholds with a hypothesis, workload or
+platform, decisive check, pass/fail target, and fallback; documentation or model
+agreement cannot prove them. A missing fact that could disqualify adoption, such as license
 permission or required platform support, keeps dependent adoption and product
 design and implementation blocked. A bounded implementation risk may be tested in
 an approved first slice with an explicit failure condition and reversible approach.
