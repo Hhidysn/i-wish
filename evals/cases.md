@@ -126,4 +126,5 @@ Recorded executions: [2026-10-03 confirmation and research gates](../docs/histor
 [2026-10-05 external-practice checks](../docs/history/2026-10-05-external-practices.md),
 [2026-10-05 restore checks](../docs/history/2026-10-05-restore-from-982af82.md),
 and [2026-10-05 documentation-practice checks](../docs/history/2026-10-05-doc-note-practices.md),
-and [2026-10-06 post-approval findings checks](../docs/history/2026-10-06-post-approval-findings.md).
+and [2026-10-06 post-approval findings checks](../docs/history/2026-10-06-post-approval-findings.md),
+and [2026-10-06 fresh-context probe](../docs/history/2026-10-06-fresh-context-probe.md).

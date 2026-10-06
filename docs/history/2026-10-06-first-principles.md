@@ -35,10 +35,12 @@ this change introduced it or it was already there. Observed before the change:
 
 ## What this does not prove
 
-The change is text and structure only. No behavioral run in a fresh context tested
-whether an agent now researches before designing with fewer procedural prompts,
-writes user-facing text from the comprehension rule, or fixes a defect it did not
-introduce. The three new eval cases are recorded as expectations, not observed
-behavior. Whether the shorter `research.md` still produces the depth restored by
-0005 is the specific open question; it needs a fresh-context run on a task with a
-hard-to-reverse decision, not another word count.
+The change is text and structure only, and the three new eval cases are recorded
+as expectations, not observed behavior. The specific open question — whether the
+shorter `research.md` still produces the depth restored by 0005 — was answered
+afterwards by a fresh-context probe on a task with a hard-to-reverse decision:
+with no web tool available, the runner still inspected primary sources and every
+checkable citation held (`2026-10-06-fresh-context-probe.md`). Still unproven: the
+comprehension rule against a real user, the defect-origin rule, interactive gate
+behaviour, and every implementation-side rule. The probe covers one model family
+and one wish, and nothing here was tested by another word count.
