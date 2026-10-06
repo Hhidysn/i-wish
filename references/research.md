@@ -1,118 +1,68 @@
 # Research online before designing
 
-Read after Gate 1 and whenever affected research is reopened under
-[SKILL.md](../SKILL.md#research-online-before-designing). Every new I Wish workflow
-requires actual current-source online research before architecture/design drafting,
-including design-only work and requests that introduce no external dependency.
-Do not choose the architecture first and add supporting links afterward.
+Read after Gate 1, and again whenever evidence invalidates an approved decision.
+The obligation is to settle the design decisions with current primary evidence
+before drafting. How the sources are reached does not matter; what matters is that
+they were actually inspected. Local inspection complements this work, never
+replaces it.
 
-Decompose the wish into the decisions the solution must settle. Research deeply
-when a decision is hard to reverse or affects security, data, public formats,
-architecture, recurring cost, platforms, performance, licensing, or much future
-content; handle replaceable commodity parts just in time. Start from requirements
-and acceptance criteria, not a favored package name.
+## Decide what has to be researched
 
-For a new project, new module, or module refactor, research and compare against
-the whole agreed scope: map each required capability family to its decision and
-evidence instead of reducing research to the first feature the agent knows how to
-build. Use authorized specialists when they improve coverage; the lead checks
-decision-driving sources and owns synthesis. A submitted task, silence, or a
-timeout is not a completed finding; reconcile or stop an orphaned task through
-the host's controls before retrying.
+Decompose the wish into the decisions the solution must settle, then research each
+at the depth its reversibility deserves. Hard to reverse, or touching security,
+data, public formats, licensing, platforms, recurring cost, or a large amount of
+future content: inspect primary sources. Replaceable commodity choices: settle
+them just in time. For a new project, module, or refactor, cover the whole agreed
+scope, not the first feature that is easy to build.
 
-## Inspect existing solutions first
+Start from acceptance criteria and constraints, never from a favored package name.
+Inspect project code and decisions, platform and standard-library capabilities,
+installed dependencies, official documentation, release notes, repositories, and
+license files. Search snippets, invented citations, and memory are not sources.
 
-Start from acceptance criteria and project constraints. Inspect relevant project
-code and decisions, standard-library/platform/engine capabilities, official
-routes, and installed dependencies. Use web/search tools to search current
-approaches and reusable solutions, then open relevant primary documentation,
-repositories, releases, or license files. Even when a local or platform capability
-looks sufficient, check its current primary sources and relevant alternatives
-online. Local inspection alone does not satisfy this stage. Search snippets,
-invented citations, and model memory are not source inspection.
+Compare candidates only on dimensions that can change the recommendation:
+acceptance coverage, compatibility, integration and maintenance cost, performance,
+security, permissions, native binaries, supply chain, verification effort,
+licensing, operating cost, data exposure, and replacement difficulty. Include
+custom implementation when it reduces total complexity, and state why the
+alternatives fail a constraint or cost more overall. Do not pad the list, and do
+not invent alternatives to a capability that already fits.
 
-Compare plausible solution classes only on dimensions that can change the
-recommendation: acceptance coverage, compatibility, integration and maintenance
-cost, performance, security, permissions, native binaries, supply chain,
-verification effort, licensing, operating cost, data exposure, and replacement
-difficulty. Include custom implementation when it can reduce
-total complexity. Explain why available solutions fail relevant constraints or
-cost more overall before choosing custom work. Do not pad a candidate list or
-require alternatives to an already evidenced, adequate capability.
+## Apply what you find
 
-Evaluate existing code by the same criteria. Reuse what fits; attempt a bounded
-repair when evidence favors it; replace a core that blocks the intended
-experience instead of accumulating patches after the repair hypothesis fails.
+- Never adopt a candidate whose identity, license, maintenance, or compatibility
+  is known only from memory.
+- Flag copyleft, non-commercial, no-derivatives, source-available, marketplace,
+  custom, and unclear terms, and carry attribution, NOTICE, and source-offer duties
+  into the project and release documents. Learning from an article grants no right
+  to copy its code or assets.
+- Keep queries and reviewer briefs de-identified. Never send private project or
+  user data to an external service without explicit authorization.
+- Screen candidates remotely; pull one into a temporary directory outside the
+  project only when local inspection would change the decision, then clean up.
+- When no independent reviewer is available, freeze the first proposal and attack
+  its weakest assumption. A challenge ends in a revision, more research, or a
+  disclosed risk — never in a vote.
+- A delegated research task counts only once its report arrives and its
+  decision-driving sources have been checked. A timeout or silence is not a
+  finding; reconcile or stop the orphaned task before retrying.
 
-## Record the evidence and recommendation
+## Show the conclusion, then close the gate
 
-Produce a concise research conclusion in the conversation before proposing the
-solution. After Gate 2, preserve it in an existing decision/feature document or
-research note under [documentation.md](documentation.md). Include:
+Put the conclusion in the conversation before proposing a solution: the decisions
+it must satisfy; the candidates and why each was kept or dropped; the sources
+actually inspected, with check dates and versions, and which claim each supports;
+the recommendation, its trade-offs, and continuing obligations; verified facts,
+inferences, and unknowns, clearly separated; and the first check that would prove
+or falsify the choice.
 
-- the decision and acceptance constraints it must satisfy;
-- candidates considered, including reuse, repair, replacement, or custom work
-  where applicable, and decision-relevant reasons for selection or rejection;
-- actual web searches performed, inspected primary-source links, check dates,
-  relevant versions/revisions, and which claim each source supports; add local
-  source paths for project-specific evidence;
-- the recommendation, material trade-offs, and continuing obligations;
-- verified facts, inferences, and unresolved assumptions, clearly distinguished;
-- what the first slice or bounded experiment must prove, its pass/fail condition,
-  and what failure would require reconsidering.
+Research is sufficient when the constraints that drive the recommendation rest on
+inspected evidence and the remaining uncertainty has a practical validation path.
+A missing fact that could disqualify adoption — license permission, required
+platform support — blocks dependent design and implementation. Track unproven
+thresholds with a hypothesis, a decisive check, a pass/fail target, and a fallback.
 
-Use current primary evidence for external claims driving adoption, such as
-official documentation, release notes, source repositories, and license files.
-For project claims, cite the inspected code, manifests, decisions, or executed
-checks. Reuse completed online research from this workflow when its inspected
-sources, actual tool evidence, requirements, versions, and obligations still apply;
-reference that evidence rather than repeating searches. A historical ADR or local
-note alone does not waive online research for a new wish. Recheck changed claims.
-
-Separate learning from reuse: a talk, article, or observed product behavior can
-inform a design without granting rights to copy its code or assets. Check actual
-license and distribution obligations before incorporating external artifacts.
-Flag copyleft, non-commercial, no-derivatives, source-available, marketplace,
-custom, and unclear terms; carry attribution, NOTICE, source-offer, and
-provenance duties into project and release docs. Never adopt a candidate whose
-identity, license, maintenance, or compatibility is known only from memory.
-
-Keep research queries and reviewer briefs de-identified; never send private
-project or user data to an external service without explicit authorization.
-
-When no independent reviewer is available, freeze the first proposal and run an
-explicit adversarial pass against its weakest assumptions; decide by evidence,
-not by vote. A challenge must end in a revision, more research, or a disclosed
-risk.
-
-## Close the gate or isolate the unknown
-
-Research is sufficient when the constraints driving the recommendation have
-evidence from inspected sources, the conclusion is shown, and remaining uncertainty has a practical
-validation path. Track unproven thresholds with a hypothesis, workload or
-platform, decisive check, pass/fail target, and fallback; documentation or model
-agreement cannot prove them. A missing fact that could disqualify adoption, such as license
-permission or required platform support, keeps dependent adoption and product
-design and implementation blocked. A bounded implementation risk may be tested in
-an approved first slice with an explicit failure condition and reversible approach.
-
-When online tools or required sources are unavailable, report what could not be
-checked and ask for restored access or an explicit alternative research instruction.
-Do not silently switch to local-only research, draft the dependent design, or count
-an uncertainty label as a passed gate. Continue permitted local inspection while
-waiting. A user-directed exception changes the workflow, not the evidence quality;
-report the resulting limits.
-
-Before Gate 2, a prototype or running candidate code requires explicit approval
-of that bounded experiment. State its question, scope, and pass/fail condition;
-keep it outside the active project and report what it established. Screen
-candidates remotely first; download a shortlist only when local inspection
-changes the decision, into a temporary directory on a volume with adequate free
-space (prefer a non-system volume), pinned, outside the project and Skill, without
-needless history, LFS, caches, or build output. Disclose large downloads and
-clean up.
-
-After the research conclusion, present the recommendation in plain language and
-obtain Gate 2 approval before writing design documents or implementation. New
-triggers or contrary evidence reopen only affected decisions and slices, following
-the confirmation rules in SKILL.md.
+When the sources cannot be reached, say what could not be checked and ask for
+access or an explicit alternative. Do not quietly fall back to local-only
+research, draft the dependent design, or count an uncertainty label as a passed
+gate. A user-directed exception changes the workflow, not the quality of evidence.

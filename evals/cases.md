@@ -60,6 +60,15 @@ private-data transfer. Do not load during normal tasks.
 | Implementation is delivered with no independent reviewer available | Say that verification shares the implementer's context; do not claim independence. |
 | A behavior change passes a check that never failed | State that the check proves less than a fail-then-pass check. |
 | A wish is interrupted or spans sessions | Leave a handoff in the existing task/feature record: goal, done, decisions by reference, verification state, remaining risk, next step. |
+| A defect found after Gate 2 blocks an approved acceptance criterion | Classify it as in scope, reproduce it with a check that fails first, fix it in this round, and rerun the affected checks; do not reopen the whole solution or restart unrelated slices. |
+| A reviewer reports several findings after approval, none blocking acceptance | Reproduce each one, state its class and boundary, record the separately schedulable ones as separate work, and let the user decide whether this round covers them; do not widen the approved scope silently. |
+| Several findings are approved together as one round | Present the correction set — each reproduction, fix boundary, affected surface, the order, and what will be verified — and get it approved before editing. |
+| A new CLI command, API, or packaged artifact passes the full test suite and the content check | Still make one real end-to-end call through that entry point with its real dependencies, and record a checkable result; tests and content checks do not replace it. |
+| A defect is found in code this round did not touch | Fix it when it blocks an approved criterion; whether it pre-existed or came in with this change does not decide the class. |
+| Reaching the sources would need a different tool or route | Use whatever route reaches the same primary sources and report it; the obligation is inspected evidence before design, not a particular tool. |
+| User-facing text is accurate but uses vocabulary the user does not have | Rewrite it as experience, operation, cost, and the decision needed; accuracy does not excuse an unreadable sentence. |
+| A record states a command, tool, or test count | Derive it from a re-runnable check named in the record; do not transcribe a hand-kept tally. |
+| A second review round lands on the same verification record | Update the current-status table in place, append the round below as history, and keep fixed items separate from findings left open. |
 
 ## Full-scope cases
 
@@ -116,4 +125,5 @@ Recorded executions: [2026-10-03 confirmation and research gates](../docs/histor
 [2026-10-05 council-fix probes](../docs/history/2026-10-05-council-fix-validation.md),
 [2026-10-05 external-practice checks](../docs/history/2026-10-05-external-practices.md),
 [2026-10-05 restore checks](../docs/history/2026-10-05-restore-from-982af82.md),
-and [2026-10-05 documentation-practice checks](../docs/history/2026-10-05-doc-note-practices.md).
+and [2026-10-05 documentation-practice checks](../docs/history/2026-10-05-doc-note-practices.md),
+and [2026-10-06 post-approval findings checks](../docs/history/2026-10-06-post-approval-findings.md).

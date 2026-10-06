@@ -43,3 +43,7 @@ and local-download passages that are already covered in compact form.
 unchanged. The restored rules are text-only; behavior across models was not
 re-tested. Checks and the snapshot digest are recorded in the
 [2026-10-05 restore note](../history/2026-10-05-restore-from-982af82.md).
+
+Narrowed by [0008](0008-first-principles-skill-shape.md): every rule restored here
+still stands, but local-source hygiene is one bullet in `research.md` rather than a
+procedure, because the route to a source is not the point. The rest is unchanged.

@@ -61,6 +61,28 @@ decision, reopen affected research and the relevant approval gate before changin
 dependent documents or code. Do not restart unrelated settled work or patch around
 a false premise.
 
+## Handle findings that appear after approval
+
+Verification, review, and real use surface defects inside the approved outcome but
+outside the approved change list. Classify each before touching the project, and
+tell the user which class it is:
+
+| Finding | Handling |
+| --- | --- |
+| Blocks an approved acceptance criterion | In scope; fix it in this round and rerun the affected checks |
+| Same class of defect, separately schedulable | Record it as separate work with its reproduction; the user decides whether this round covers it |
+| Changes the solution, dependency, boundary, or license | Reopen Gate 2 or the affected research before dependent work |
+
+Reproduce a defect before fixing it, with a check that fails first and passes
+after. When several findings are approved together, state each one's reproduction,
+fix boundary, and affected surface, the order, and what will be verified; get that
+set approved before editing. A finding never widens the approved scope by itself,
+and no fix may weaken an acceptance criterion.
+
+Fix a defect whether this change introduced it or it was already there: origin
+decides nothing, and a pre-existing defect that blocks an approved criterion is in
+scope like any other. "Out of scope" never means "not my fault".
+
 ## Verify against the agreed result
 
 Run proportionate checks that establish the acceptance criteria: targeted tests,
@@ -68,6 +90,12 @@ reproduction steps, diagnostics, interaction, screenshots, or runtime inspection
 Build and typecheck results cannot establish interactive or integration behavior.
 For subjective criteria, obtain the planned review evidence and identify any
 required user judgment still pending.
+
+A new user-facing entry point (command, API, packaged artifact, installer) needs
+at least one real end-to-end call through that entry point, using its real
+dependencies and side effects, with a checkable result (task ID, artifact hash, or
+produced file). A passing test suite, a content check, or a dry run does not
+replace it; a bug that only real use exposes stays undiscovered otherwise.
 
 Where the host offers an independent reviewer, check the work on two separate
 axes: does it match the confirmed intent and acceptance criteria, and does it

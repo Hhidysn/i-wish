@@ -74,7 +74,12 @@ After each completed slice and before reporting completion, check that:
 - new decisions, research conclusions, and reusable failure lessons have a home;
 - superseded guidance is labeled or archived and relevant links are updated;
 - remaining uncertainty, incomplete acceptance, and continuing obligations are
-  visible without presenting planned behavior as already implemented.
+  visible without presenting planned behavior as already implemented;
+- every countable claim (commands, tools, tests, covered targets) comes from a
+  re-runnable check named in the record, never from a hand-kept tally;
+- a record that receives several review rounds keeps one current-status table
+  updated in place, appends each round below as history, and separates what that
+  round fixed from what it found and left open.
 
 If no durable fact or affected documentation changed, no new record is needed.
 Preserve reproducible findings and decision reasons, not raw dialogue, secrets,
