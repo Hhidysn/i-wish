@@ -26,7 +26,7 @@ The digest concatenates UTF-8 relative path, a NUL byte, and file bytes for
 The checks establish structure, budgets, and internal consistency only. They do
 not show that a given model follows the batched interview, the effect-language
 contract, or the templates across hosts. Those remain specified cases in
-[cases.md](../../evals/cases.md), not executed results. No fresh-context
+[cases.md](2026-10-09-runtime-before-refactor/evals/cases.md), not executed results. No fresh-context
 behavioral run was performed in this round, and no installed host copy was
 synchronized.
 

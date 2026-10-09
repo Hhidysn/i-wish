@@ -1,3 +1,5 @@
+> Historical snapshot of revision `5bfecea` (2026-10-09). Not active instructions. Current workflow: [I Wish](../../../../SKILL.md).
+
 # Shape the wish
 
 Read before clarification and Gate 1. Inspect the user's request, existing

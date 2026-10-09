@@ -2,6 +2,7 @@
 
 Date: 2026-10-05
 Status: Accepted
+Retained in: compact record guidance under [0009](0009-lite-full-progressive-orchestration.md). Original rationale below is historical.
 
 ## Context
 

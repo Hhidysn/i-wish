@@ -1,0 +1,4 @@
+interface:
+  display_name: "I Wish"
+  short_description: "Confirm intent, research online, approve, deliver, and verify"
+  default_prompt: "Use $i-wish to clarify and confirm my wish, research current sources online, and get my approval of the solution before writing design documents or implementation."

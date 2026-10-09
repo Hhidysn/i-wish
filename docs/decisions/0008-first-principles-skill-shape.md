@@ -2,6 +2,7 @@
 
 Date: 2026-10-06
 Status: Accepted
+Partially superseded by: current layout, budgets and conditional reads are governed by [0009](0009-lite-full-progressive-orchestration.md). Original rationale below is historical.
 
 ## Context
 

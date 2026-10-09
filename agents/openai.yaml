@@ -1,4 +1,4 @@
 interface:
   display_name: "I Wish"
-  short_description: "Confirm intent, research online, approve, deliver, and verify"
-  default_prompt: "Use $i-wish to clarify and confirm my wish, research current sources online, and get my approval of the solution before writing design documents or implementation."
+  short_description: "Shape demos and complex projects with independent checks"
+  default_prompt: "Use $i-wish to choose lite or full, confirm my intent, complete online research and independently challenge the design, then wait for my solution approval before writing design files or code."

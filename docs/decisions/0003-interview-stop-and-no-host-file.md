@@ -2,6 +2,7 @@
 
 Date: 2026-10-05
 Status: Accepted
+Partially superseded by: current intake and mode rules are governed by [0009](0009-lite-full-progressive-orchestration.md). Original rationale below is historical.
 
 ## Context
 

@@ -2,6 +2,7 @@
 
 Date: 2026-10-05
 Status: Accepted
+Extended by: independent post-code test authorship, separate UX and evidence validity are governed by [0009](0009-lite-full-progressive-orchestration.md). Original rationale below is historical.
 
 ## Context
 

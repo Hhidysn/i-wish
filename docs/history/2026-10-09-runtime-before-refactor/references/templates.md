@@ -1,3 +1,5 @@
+> Historical snapshot of revision `5bfecea` (2026-10-09). Not active instructions. Current workflow: [I Wish](../../../../SKILL.md).
+
 # Templates
 
 Defaults when the project has no convention. Use only the templates a task needs;

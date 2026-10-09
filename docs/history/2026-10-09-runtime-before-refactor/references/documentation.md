@@ -1,3 +1,5 @@
+> Historical snapshot of revision `5bfecea` (2026-10-09). Not active instructions. Current workflow: [I Wish](../../../../SKILL.md).
+
 # Preserve decisions and current documentation
 
 Read before writing project decisions or documentation. Before Gate 2, keep the

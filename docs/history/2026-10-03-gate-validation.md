@@ -50,6 +50,6 @@ behavior across every model or host, tool-level enforcement, unavailable-browsin
 handling, explicit user overrides, or post-Gate-2 implementation and document quality.
 The task-scheduler recommendation itself was not a product implementation test.
 
-Other scenarios in [cases.md](../../evals/cases.md) remain specified cases, not
+Other scenarios in [cases.md](2026-10-09-runtime-before-refactor/evals/cases.md) remain specified cases, not
 executed results in this run. The design rationale is in the
 [confirmation-gate decision](../decisions/0001-confirm-before-design.md).

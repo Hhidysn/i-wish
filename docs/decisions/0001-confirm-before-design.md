@@ -2,6 +2,7 @@
 
 Date: 2026-10-03
 Status: Accepted
+Mandatory gate semantics restored and enforced by [0010](0010-restore-mandatory-gates.md); mode routing remains under [0009](0009-lite-full-progressive-orchestration.md).
 
 ## Context
 
@@ -39,5 +40,5 @@ model quotas are unnecessary. Design-only approval does not authorize product co
 These are behavioral instructions, not tool-level enforcement. Validate the order
 with isolated forward tests, not only wording checks. Revisit if actual traces
 still show design or writes preceding the required confirmation and evidence.
-See the [behavioral cases](../../evals/cases.md#gate-order-regressions) and
+See the [behavioral cases](../history/2026-10-09-runtime-before-refactor/evals/cases.md#gate-order-regressions) and
 [bounded validation run](../history/2026-10-03-gate-validation.md).

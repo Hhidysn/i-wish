@@ -1,0 +1,74 @@
+{
+  "ok": true,
+  "kind": "static-packaging-only",
+  "units": "whitespace words, not model tokens",
+  "metrics": [
+    {
+      "path": "SKILL.md",
+      "words": 649,
+      "budget": 650,
+      "sha256": "0189eddc0a6c14a7194a535896d6d254b0a4f36ad81f9504132381a48b7f2904"
+    },
+    {
+      "path": "references/agents.md",
+      "words": 545,
+      "budget": 700,
+      "sha256": "ab05d182172f53e997587c68acd0da16809787525d167ea262afc945c65ca7e4"
+    },
+    {
+      "path": "references/full.md",
+      "words": 785,
+      "budget": 1000,
+      "sha256": "a79b59b1e8bf2cdc929f3c4055826332cd1c3e22be7b4bc8bd567e6cbd389b9f"
+    },
+    {
+      "path": "references/game-projects.md",
+      "words": 219,
+      "budget": 300,
+      "sha256": "679a1e28500d3168de699a7d84943e4a0bb6499fbdf75fa82d17892085109bbb"
+    },
+    {
+      "path": "references/lite.md",
+      "words": 385,
+      "budget": 450,
+      "sha256": "9bd307a63ab5ffd842024428a406d50f6e7f433f20092781c74b87103be561ed"
+    },
+    {
+      "path": "references/plain-language.md",
+      "words": 175,
+      "budget": 250,
+      "sha256": "a9148b94192832f9f063fe30064daadf526d76cc1f546f3afe6931e10818e965"
+    },
+    {
+      "path": "references/records.md",
+      "words": 361,
+      "budget": 450,
+      "sha256": "c4ff14c9249fd6214aafdba5c18e748fbe75316fa6ee1f96520cf25ace3747d1"
+    },
+    {
+      "path": "references/research.md",
+      "words": 392,
+      "budget": 550,
+      "sha256": "d07ecd483af211d8d710e918e5ccdbf3e39e3e11a54b2a6a7bb08a040ed9479f"
+    },
+    {
+      "path": "references/verification.md",
+      "words": 609,
+      "budget": 800,
+      "sha256": "061d3bbe96244af57feb88712ff7fc3373c5a50e78081ff70dee305d71e0e4f4"
+    }
+  ],
+  "runtimeWords": 4120,
+  "runtimeSHA256": "9c0d5cdfd4633bf696e0e90b81f51d2d50e8f7ac3b448ce74dedeba39a45f163",
+  "metadataSHA256": "35e66772c8aa1143b624506ddfb8c22f151bac510e013bc2cd63c8e5ea26bfac",
+  "evidenceFiles": {
+    "scripts/check.mjs": "a0eaabd28c4dc432ab8b1444a55f12265af9a0affc3629af47649bbd6e24ec21",
+    "evals/cases.md": "0b085c825375825a28b4f3d518d8d962b6b06733f0378ef7b22a55db4f72f9a1",
+    "evals/check.test.mjs": "b07c4f408f132793ad42ab0fa9bf96fe77ee27246a77e1a3b03ff38d3687263e"
+  },
+  "baseline": {
+    "entryWords": 1078,
+    "runtimeWords": 5660
+  },
+  "failures": []
+}

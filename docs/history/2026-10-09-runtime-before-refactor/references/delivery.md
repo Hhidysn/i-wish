@@ -1,8 +1,10 @@
+> Historical snapshot of revision `5bfecea` (2026-10-09). Not active instructions. Current workflow: [I Wish](../../../../SKILL.md).
+
 # Plan, build, and prove
 
 Read the coverage section before proposing a solution (Gate 2); read the rest
 after Gate 2, before producing the approved design documents or implementation.
-Apply the boundaries in [SKILL.md](../SKILL.md#mandatory-phase-boundaries): intent
+Apply the boundaries in [SKILL.md](../entry.md#mandatory-phase-boundaries): intent
 confirmation, completed online research, and solution approval are all required.
 
 For a new project, module, or refactor, establish the overall coverage and

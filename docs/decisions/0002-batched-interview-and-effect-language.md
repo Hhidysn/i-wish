@@ -2,6 +2,7 @@
 
 Date: 2026-10-05
 Status: Accepted
+Partially superseded by: fixed question-count, mandatory language preload and old layout/budgets replaced by [0009](0009-lite-full-progressive-orchestration.md). Original rationale below is historical.
 
 ## Context
 

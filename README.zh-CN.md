@@ -5,16 +5,38 @@
 许愿术，是凡人能掌握的最强大法术。
 你只需要大声说出愿望，世界便为其赋予形状。
 
-将实质性的产品、功能或子系统愿望转化为明确的成功标准、有证据的方案和经过验证的结果。产品、架构或复用选择仍未确定或已委托给 AI 时适用，即使期望行为已经清楚。详见 [SKILL.md](SKILL.md)。
+把尚未定案的项目、模块或重大重构，变成明确需求、有依据的方案、
+经过审计的设计和独立验证的交付。保留一个 `$i-wish` 入口，内含两套流程。
 
-使用 `$i-wish` 并描述期望结果和已知约束。流程先以每轮 3–4 个问题（每题带推荐默认）澄清并确认需求，再实际联网搜索和查阅一手来源，随后提交推荐方案供你确认。确认方案后按规划 → 实现 → 验证 → 交付推进，并按项目规范沉淀记录。
+| 模式 | 适用 | 规划深度 |
+| --- | --- | --- |
+| lite 轻量 | 有界、可逆的 demo | 短确认卡、定向调研、一条完整体验 |
+| full 正式 | 模块耦合、分阶段交付或重要承诺 | 共享契约、模块细化、任务依赖、阶段验收 |
 
-默认强制两次确认及联网调研，纯设计任务同样适用。“技术你定”不代表跳过门禁。相同阶段已有明确确认时沿用；用户明确要求改变流程时遵从该指令。这些是 agent 行为规则，不是工具层面的强制拦截。
+调用 `$i-wish`，描述结果和约束。可以说“使用轻量模式”或“使用正式模式”；
+未指定时自动判断并说明理由。按风险补足必要控制；普通小修和已定案的机械实现
+走日常流程。
 
-运行时指引包括[需求澄清](references/shaping.md)、[调研](references/research.md)、[交付验证](references/delivery.md)、[文档沉淀](references/documentation.md)、[效果表述](references/plain-language.md)、[模板](references/templates.md)和[游戏专项](references/game-projects.md)。新建项目、新增模块和模块重构先按交付参考确认整体覆盖与契约，再拆切片；只读取适用的参考。开发检查见[行为案例](evals/cases.md)，流程取舍见[决策记录](docs/decisions/0001-confirm-before-design.md)。
+两版默认使用子代理：方案由独立代理对抗审计，编码后独立作者编写验收测试，
+另一新上下文模拟普通用户体验。创意未定时由不同模型独立提案，真实研究问题
+按能力并行。正式版还包含模块级调研/设计/审计、任务就绪和分开的需求/规范审查。
+轻量、正式和纯设计任务都必须经过两道门禁：确认需求后才能联网调研，
+调研完成后才能设计方案；用户明确批准方案和交付范围后才能写设计文件或代码。
+两道门禁都须停下等待；“技术你定”、需求清楚、demo 或可逆文档都不能豁免。
+沿用同范围的实际批准；用户明确跳过指定阶段只作用于其指定范围。
+缺少必要角色或证据时报告部分完成。
 
-## 安装
+## 安装与导航
 
-把本目录复制或软链到宿主技能目录：Codex 读 `~/.agents/skills/i-wish`（项目内 `.agents/skills/i-wish`），Claude Code 读 `~/.claude/skills/i-wish`，OpenCode 读 `~/.config/opencode/skills/i-wish` 或 `.opencode/skills/i-wish`。用 `$i-wish` 或 `/i-wish` 显式调用。闸门是行为约定而非工具强制；保留一份源目录并做软链，避免多份副本漂移。
+复制或链接本目录到宿主技能目录：Codex `~/.agents/skills/i-wish`
+（项目内 `.agents/skills/i-wish`）；Claude Code `~/.claude/skills/i-wish`；
+OpenCode `~/.config/opencode/skills/i-wish` 或 `.opencode/skills/i-wish`。
+按宿主支持使用 `$i-wish` 或 `/i-wish`。保留一份源目录，避免副本漂移。
+技能规定行为；宿主提供真实派发、上下文隔离、模型路由和权限。
+
+- [入口](SKILL.md)、[轻量流程](references/lite.md)、[正式流程](references/full.md)
+- [代理职责](references/agents.md)、[独立验证](references/verification.md)
+- [当前流程说明](docs/design/workflow.md)、[调研取舍](docs/research/workflow-comparison.md)
+- 开发检查：`node scripts/check.mjs`；[行为案例](evals/cases.md)
 
 [MIT](LICENSE) © 2026 Hhidysn
