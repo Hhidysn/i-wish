@@ -17,7 +17,7 @@ not a new architecture or a new approval loop for the correction.
 
 ## Decision
 
-[Entry](../../SKILL.md#mandatory-phase-boundaries) explicitly owns both mandatory
+[Entry](../../SKILL.md#mandatory-gates) explicitly owns both mandatory
 gates for lite, full and design-only. Gate 1 requires the shown brief, resolved
 material user choices, and explicit user confirmation: stop/wait. Before it:
 bounded local read-only inspection and clarification only.

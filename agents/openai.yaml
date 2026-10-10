@@ -1,4 +1,4 @@
 interface:
   display_name: "I Wish"
-  short_description: "Shape demos and complex projects with independent checks"
-  default_prompt: "Use $i-wish to choose lite or full, confirm my intent, complete online research and independently challenge the design, then wait for my solution approval before writing design files or code."
+  short_description: "Shape any wish with research, audits and checks"
+  default_prompt: "Use $i-wish to choose lite or full for my wish, confirm my intent, complete online research and independently challenge the design, then wait for my approval before writing design files or artifacts."

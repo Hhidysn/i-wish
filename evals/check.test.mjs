@@ -11,7 +11,6 @@ const roots = [];
 const references = {
   lite: 'Lite Guide', full: 'Full Workflow', agents: 'Agent Roles', research: 'Research',
   verification: 'Verification', records: 'Records', 'plain-language': 'Plain Language',
-  'game-projects': 'Game Projects',
 };
 
 function put(root, name, content) {
@@ -77,7 +76,7 @@ test('valid package reports static evidence and stable identity', () => {
   assert.equal(first.report.kind, 'static-packaging-only');
   assert.equal(first.report.units, 'whitespace words, not model tokens');
   assert.deepEqual(first.report.failures, []);
-  assert.equal(first.report.metrics.length, 9);
+  assert.equal(first.report.metrics.length, 8);
   assert.ok(first.report.metrics.every(row => row.path && Number.isInteger(row.words) &&
     Number.isInteger(row.budget) && /^[a-f0-9]{64}$/.test(row.sha256)));
   assert.match(first.report.runtimeSHA256, /^[a-f0-9]{64}$/);
@@ -88,10 +87,10 @@ test('valid package reports static evidence and stable identity', () => {
 
 test('word budget and metadata violations fail', () => {
   const over = fixture();
-  put(over, 'SKILL.md', `${readFileSync(join(over, 'SKILL.md'), 'utf8')}${'word '.repeat(651)}`);
+  put(over, 'SKILL.md', `${readFileSync(join(over, 'SKILL.md'), 'utf8')}${'word '.repeat(601)}`);
   const overResult = checked(over);
   assert.equal(overResult.result.status, 1);
-  assert.ok(overResult.report.failures.some(f => f.includes('SKILL.md:') && f.includes('> 650')));
+  assert.ok(overResult.report.failures.some(f => f.includes('SKILL.md:') && f.includes('> 600')));
 
   const bad = fixture();
   const skill = readFileSync(join(bad, 'SKILL.md'), 'utf8')

@@ -18,7 +18,7 @@ optional-approval policy in `bc67d39`; that earlier policy has no separate ADR.
 
 ## Decision
 
-Use the phase boundaries in [SKILL.md](../../SKILL.md#mandatory-phase-boundaries):
+Use the phase boundaries in [SKILL.md](../../SKILL.md#mandatory-gates):
 user-facing clarification and confirmed intent, actual online research, then a
 reviewable recommendation and explicit solution approval before design documents
 or implementation. Detailed input and delegated technical choices do not replace

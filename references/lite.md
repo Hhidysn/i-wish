@@ -1,52 +1,53 @@
 # Lite
 
-One useful demo; short inputs, bounded calls, one record. Inherit the entry's
-mandatory Gate 1/Gate 2 rules, including stop/wait and online-research completion.
-Lite changes planning depth; it does not waive either gate.
+One bounded wish, journey or artifact; short inputs; one record. Inherit the
+entry's Gate 1/Gate 2, stop-and-wait and mandatory online-research rules. Lite
+changes planning depth, never the gates.
 
 ## Decide
 
-Use a short outcome card from known facts. Ask only missing material choices;
-confirm intent. Research this journey's consequential decisions using current
-primary evidence and existing project patterns. One real question can use one
-researcher; independent questions can run concurrently. Reuse valid findings.
+Short outcome card from known facts. Ask only missing material choices; confirm
+intent. Research this journey's consequential decisions from current primary
+evidence plus existing project patterns. One real question: one researcher;
+independent questions may run concurrently. Reuse valid findings.
 
-If product direction remains open, request isolated proposals from two distinct
-available models under [agents.md](agents.md). Discuss only consequential
-alternatives or omissions. Settled implementation details skip that round.
+Product direction still open: isolated proposals from two distinct available models
+under [agents.md](agents.md); discuss only consequential alternatives or omissions.
+Settled details skip that round.
 
-Recommend the smallest complete approach, meaningful alternatives, reuse choices,
-cost/limits and checks. Freeze it; obtain one fresh independent design challenge.
-Close blockers; confirm solution and delivery scope. Define acceptance now; no
-extra compulsory pre-coding test-author round.
+Recommend the smallest complete approach, real alternatives, reuse choices,
+cost and limits, and checks. Freeze it; obtain one fresh independent design
+challenge. Close blockers; confirm solution and delivery scope. Define acceptance now.
 
-## Build and check
+## Produce and check
 
-Plan a few observable increments: goal, dependencies, writer, check and recovery.
-One feature note suffices; no compulsory PRD, module matrix or task service.
-Build the normal end-to-end path, then remaining approved behavior.
+Plan a few observable increments: goal, dependencies, writer, check, recovery.
+One short note suffices; no compulsory document suite or task service. Produce the
+normal end-to-end path first, then remaining approved behavior.
 
-After coding, dispatch a fresh test author different from the coder. It derives
-checks from approved behavior before seeing implementation; follow
-[verification.md](verification.md). It may then review the code in the same call,
-with separate requirements and standards verdicts. Preserve the frozen baseline.
-Native read-only authors return exact test/scenario patches; primary applies them.
+After the artifact forms, dispatch a fresh acceptance author different from the
+producer: derive checks from approved behavior before seeing the work; follow
+[verification.md](verification.md). It may then review in the same call, with
+separate requirements and standards verdicts. Keep the frozen baseline. Read-only
+authors return exact patches; primary applies them.
 
-Use a different fresh UX identity at the completed user-visible journey, not per
-internal ticket. Give only ordinary user materials and isolated test data.
-Acceptance tests and UX may run concurrently on the same candidate when state is
-isolated. Static/visual work can use independent interaction or rendered checks
-without adding a test framework. A planned check is not executed evidence.
+A different fresh user identity tries the finished deliverable, not each internal
+step. Give ordinary user material and isolated test data only. Acceptance checks
+and the user run may go concurrently on the same candidate when state is isolated.
+Static, visual, document or configuration work can use interaction, rendered or
+read-through checks; no new framework needed. A planned check is not executed evidence.
 
 ## Keep it light
 
-- Read only current-phase references; batch related small work and checks.
-- Bound each dispatch to one decision/journey and a proportionate output budget.
-- Reuse research/audits only while their versions, scope and assumptions hold.
-- Production data, permissions, lasting compatibility, irreversible effects or
-  coupled modules trigger affected full controls; retain valid approvals.
-- Missing required roles/tools: disclose the gap, continue feasible work, mark
-  independent acceptance pending. Self-review is not an independent pass.
+- Read current-phase references only; batch small related work and checks.
+- Bound each dispatch to one decision, journey or artifact.
+- Reuse research and audits while versions, scope and assumptions hold.
+- Real accounts, sensitive data, lasting formats, irreversible effects, ongoing
+  operation or coupled modules trigger the affected [full.md](full.md) controls;
+  keep valid approvals.
+- Missing roles or tools: disclose, run one adversarial check yourself, label it
+  `non-independent`, continue feasible work, keep independent acceptance pending.
 
-Design-only: review design and sources; runtime/UX remain unverified.
-Finish with runnable result, actual evidence, limits and shortest use instructions.
+Design-only: review design, sources and coverage; runtime and user effects stay
+unverified. Finish with the runnable result or artifact, actual evidence, limits
+and shortest use instructions.

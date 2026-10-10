@@ -15,10 +15,10 @@ for (let i = 0; i < args.length; i++) {
   else { console.error(`Unknown or incomplete option: ${args[i]}`); process.exit(2); }
 }
 const budgets = new Map([
-  ['SKILL.md', 650], ['references/lite.md', 450], ['references/full.md', 1000],
+  ['SKILL.md', 600], ['references/lite.md', 420], ['references/full.md', 1000],
   ['references/agents.md', 700], ['references/research.md', 550],
   ['references/verification.md', 800], ['references/records.md', 450],
-  ['references/plain-language.md', 250], ['references/game-projects.md', 300],
+  ['references/plain-language.md', 220],
 ]);
 const failures = [];
 const metrics = [];
