@@ -72,9 +72,10 @@ acceptance still needs the real producer. Group cyclic integration dependencies 
 one integrated task; do not fake a DAG. One writer per file and shared contract.
 Parallelism needs semantic independence, not different paths. Schedule the ready frontier.
 
-Milestone before execution: usable outcome, acceptance and contract coverage,
-integrated journey, failure and recovery, applicable nonfunctional targets,
-environment, independent checks, pass criteria, blockers, recovery limits. Review
+Milestone before execution — a milestone states: usable outcome, acceptance and
+contract coverage, integrated journey, failure and recovery, applicable
+nonfunctional targets, environment, independent checks, pass criteria, blockers,
+recovery limits. Review
 plan coverage and dependency risk independently; batch with the design audit when
 already ready, otherwise one bounded plan check. No additional fixed human approval.
 
@@ -88,8 +89,8 @@ invalidated:
 2. **Research:** validate existing evidence; investigate missing or stale decisive
    claims with bounded researchers. Do not repeat still-valid searches.
 3. **Detail:** ownership, API, data, state, invariants, dependencies, error and
-   recovery, resource limits, test seams, integration. Update producers and
-   consumers together.
+   recovery, resource limits, test seams, integration (for a non-code wish: the
+   affected parts of the deliverable or plan). Update producers and consumers together.
 4. **Audit:** challenge uncovered decisions or invalid assumptions independently.
    Reuse an audit only while its version, contracts, assumptions and scope still fit.
 5. **Release:** update versions, task readiness, acceptance mapping and milestone
@@ -102,10 +103,11 @@ are updated. Preserve unrelated tasks and conclusions.
 ## Build, verify, integrate
 
 Check the actual workspace and preserve others' work. Implement approved increments;
-coder checks are supplemental. Per task: record the base revision, dispatch a bounded
-brief, collect report plus diff, review independently, fix, re-review only the
-affected range, then advance. Bounded loop: at the limit, escalate, switch the
-assigned identity, or let the primary adjudicate; never park an acceptance blocker.
+coder checks are supplemental. Per task: record the base revision or starting
+artifact state, dispatch a bounded brief, collect the report and the changed range,
+review independently, fix, re-review only the affected range, then advance. Bounded
+loop: at the limit, escalate, switch the assigned identity, or let the primary
+adjudicate; never park an acceptance blocker.
 
 Failure without new evidence: stop, reproduce, shrink, test one hypothesis at a time,
 fix the root cause, re-check regression and the original scenario, then escalate or

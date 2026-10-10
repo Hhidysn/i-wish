@@ -17,19 +17,19 @@ Settled details skip that round.
 
 Recommend the smallest complete approach, real alternatives, reuse choices,
 cost and limits, and checks. Freeze it; obtain one fresh independent design
-challenge. Close blockers; confirm solution and delivery scope. Define acceptance now.
+challenge. Close blockers; confirm solution, the few observable increments
+(goal, dependencies, writer, check, recovery) and delivery scope together.
 
 ## Produce and check
 
-Plan a few observable increments: goal, dependencies, writer, check, recovery.
 One short note suffices; no compulsory document suite or task service. Produce the
 normal end-to-end path first, then remaining approved behavior.
 
 After the artifact forms, dispatch a fresh acceptance author different from the
-producer: derive checks from approved behavior before seeing the work; follow
-[verification.md](verification.md). It may then review in the same call, with
-separate requirements and standards verdicts. Keep the frozen baseline. Read-only
-authors return exact patches; primary applies them.
+producer. It freezes requirement-derived cases before seeing the work, then may
+review in the same call with separate requirements and standards verdicts; follow
+[verification.md](verification.md). Keep the frozen baseline. Read-only authors
+return exact patches; primary applies them.
 
 A different fresh user identity tries the finished deliverable, not each internal
 step. Give ordinary user material and isolated test data only. Acceptance checks
