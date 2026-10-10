@@ -17,7 +17,7 @@
 
 | 检查 | 命令 / 方式 | 对象 | 结果 |
 | --- | --- | --- | --- |
-| 静态打包 | `node scripts/check.mjs` | 候选二 | PASS；入口 599/600，运行总量 4470 词，9 项运行时条目 |
+| 静态打包 | `node scripts/check.mjs` | 候选二 | PASS；入口 599/600，运行总量 4470 词，8 项运行时条目 |
 | 单元测试 | `node --test evals/check.test.mjs` | 候选一、二 | 11/11 通过 |
 | 前向解释 1 | 独立只读子代理（openai/gpt-6-astra），只读 `SKILL.md` + `references/*.md` | 候选一 | 7 个场景 + 3 个附加问题**全部判断正确**（路由、门禁时机、可写性、降级语义、非编码验收） |
 | 对抗审计 | 独立只读子代理（antigravity/gemini-3-8-flash），不同模型族 | 候选一 | **BLOCK**：3 项阻塞 + 1 项措辞问题 |

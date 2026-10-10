@@ -37,7 +37,7 @@
 
 ## 结构与成本
 
-运行时 9 项：`SKILL.md` 加 7 个 reference，另有非运行时的来源表在 `docs/research/`。
+运行时 8 项：`SKILL.md` 加 7 个 reference，另有非运行时的来源表在 `docs/research/`。
 字数上限由 `scripts/check.mjs` 强制：入口 600、lite 420、plain-language 220，
 其余沿用既有上限。改版后入口从 649 降到 599 词（常驻成本下降），
 深度增量转移到按需加载的 `full.md` / `verification.md` / `agents.md`。
