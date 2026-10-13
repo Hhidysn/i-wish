@@ -44,6 +44,10 @@ Do not share independent first answers before synthesis. Parallelize real resear
 questions under host limits; serial isolated work is not parallel execution. Bound
 each call; stop when its decision or check has enough evidence.
 
+Capability research must return a usable method and a decisive check, not only
+sources or tool names. The primary integrates adopted findings into design,
+dependencies or checks; agent count is not evidence of improved quality.
+
 ## Writes, inputs and missing capabilities
 
 Native read-only acceptance authors return exact files or patches. Primary saves

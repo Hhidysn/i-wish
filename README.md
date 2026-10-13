@@ -9,6 +9,10 @@ Turn an unsettled wish — a demo, a module change, a document, a media piece, a
 plan or a configuration — into clear outcomes, researched choices, an audited
 design and independently verified delivery. One installable skill, two workflows.
 
+[Metaplanning](SKILL.md#元规划) responds to capability gaps across stages:
+clarify outcomes and quality goals, research needed methods, revise execution
+when evidence warrants it, and verify the result.
+
 | Mode | Use for | Planning |
 | --- | --- | --- |
 | Lite | One bounded journey or artifact, reversible effects | Short cards, targeted research, one useful result |

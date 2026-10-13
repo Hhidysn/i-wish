@@ -2,7 +2,7 @@
 
 Date: 2026-10-06
 Evaluated revision: `9fa86c1` (installed skill at
-`C:\Users\24590\.agents\skills\i-wish`, loaded through the host's skill mechanism).
+the installed skill copy, loaded through the host's skill mechanism; local path redacted).
 
 Runtime snapshot SHA-256:
 `61eecf26cc3f760daffd7ed902d678d78c35a71bf6571bc55879b325227095a8`
