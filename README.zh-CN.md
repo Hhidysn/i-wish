@@ -42,7 +42,7 @@ Windows 下 `mklink /J` 无需管理员即可建立可用的目录联接（Junct
 符号链接需要管理员权限或开发者模式。
 
 - [入口](SKILL.md)、[轻量流程](references/lite.md)、[正式流程](references/full.md)
-- [代理职责](references/agents.md)、[调研](references/research.md)、
+- [需求澄清](references/interview.md)、[代理职责](references/agents.md)、[调研](references/research.md)、
   [独立验证](references/verification.md)、[记录](references/records.md)
 - [当前流程说明](docs/design/workflow.md)、
   [融合来源表](docs/research/sources.md)、

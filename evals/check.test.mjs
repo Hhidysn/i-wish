@@ -10,7 +10,7 @@ const checker = fileURLToPath(new URL('../scripts/check.mjs', import.meta.url));
 const roots = [];
 const references = {
   lite: 'Lite Guide', full: 'Full Workflow', agents: 'Agent Roles', research: 'Research',
-  verification: 'Verification', records: 'Records', 'plain-language': 'Plain Language',
+  verification: 'Verification', records: 'Records', interview: 'Interview',
 };
 
 function put(root, name, content) {

@@ -1,84 +1,61 @@
 ---
 name: i-wish
-description: Shape any wish — demo, module change, document, media, plan or configuration — through confirmed intent, mandatory online research, an independently audited design, dependency tasks and independent verification. Stop at both gates. Skip routine fixes.
+description: 将愿望转为研究、设计或产物，适用于 demo、模块改动、文档、媒体、计划与配置；经意图确认、联网调研、独立设计审查、依赖任务与独立验证完成交付。两道门禁均须停等；常规修复不适用。
 ---
 
 # I Wish
 
-Deliver the requested research, design or artifact. Primary owns decisions,
-synthesis, approvals and completion; host owns tools, routing, permissions, concurrency. Default: subagent-capable host, fresh contexts; read-only agents
-propose, primary-authorized writers apply.
+- 目标：交付用户要求的研究、设计或产物，按规模与风险选择 Lite / Full。
+- 主代理：负责决策、综合、审批与完成判断；宿主负责工具、路由、权限与并发。
+- 默认协作：使用子代理和新上下文；只读代理提建议，主代理授权的写入方落地。
+- 主流程：意图 → Gate 1 → 调研 → 设计与质询 → 任务纲要 → Gate 2 → 产出 → 独立验证 → 交付。
 
-**Intent ▶ Gate 1 ▶ research ▶ design + challenge ▶ outline ▶ Gate 2 ▶ produce ▶
-independent verify ▶ deliver.**
+# 流程选择
 
-## Route
+- 模式说明：开始时说明所选模式与理由；新项目不自动进入 Full，已批准的 Full 不降档。
+- Lite：单一、边界清晰的流程或产物，依赖少、影响可撤回；读取 [lite.md](references/lite.md)。
+- Full：模块耦合、分阶段交付、重要数据或权限、迁移、并发、长期契约；读取 [full.md](references/full.md)。
+- 强制 Full：公共或持久契约、真实账户、敏感数据、不可逆影响、持续运维或多次工作会话，与项目大小无关。
+- 按需读取：只读当前阶段所需参考，不预加载全部文件。
 
-Announce mode and reason.
+| 参考 | 读取时机 |
+| --- | --- |
+| [interview.md](references/interview.md) | 澄清需求 |
+| [agents.md](references/agents.md) | 派发前 |
+| [research.md](references/research.md) | 调研 |
+| [verification.md](references/verification.md) | 定义验收或验证 |
+| [records.md](references/records.md) | 保存或恢复 |
 
-| Mode | Fit | Read |
+# Mandatory gates
+
+- 适用范围：Lite / Full、demo、纯设计、委托选择和仅本地工作均遵守两道门禁。
+- 阶段例外：仅用户明确跳过的指定阶段可例外；记录范围，不推广到其他阶段。
+- Gate 1：展示需求简报，解决用户决策，提问后停等明确确认。
+- 调研前置：Gate 1 后完成真实联网搜索与一手来源阅读，再设计；本地检查只作补充。来源不可访问时，调研仍未完成，除非用户明确批准限定范围的替代方案。
+- Gate 2：展示经调研和独立质询的方案、任务纲要与阶段验收目标，提问后停等批准，再写设计文件或产物。
+- 纯设计：设计批准只授权设计，不授权实现。
+
+| 状态 | 允许 | 禁止 |
 | --- | --- | --- |
-| Lite | One bounded journey or artifact, few dependencies, reversible effects | [lite.md](references/lite.md) |
-| Full | Coupled modules, milestones, consequential data or permissions, migration, concurrency, lasting contracts | [full.md](references/full.md) |
+| 意图未确认 | 本地只读检查、需求澄清 | 公开调研、方案、架构、项目写入 |
+| Gate 1 已通过，调研未完成 | 真实联网搜索、一手来源阅读 | 方案选择、设计起草、项目写入 |
+| 调研完成，Gate 2 未通过 | 有证据的推荐、独立质询、请求批准 | 设计文件、脚手架、安装、产物 |
+| Gate 2 已通过 | 已批准的交付与检查 | 未批准的范围或影响 |
 
-Full triggers regardless of size: public or persistent contracts, real accounts,
-sensitive data, irreversible effects, ongoing operation, several work sessions.
-A new project is not automatically full; never downgrade an approved full project.
+# 沟通
 
-A wish need not be code: documents, media, plans and configuration share these gates.
-Read [agents.md](references/agents.md) before dispatch,
-[research.md](references/research.md) for research,
-[verification.md](references/verification.md) to define acceptance or verify,
-[records.md](references/records.md) to save or resume,
-[plain-language.md](references/plain-language.md) for examples. Do not preload.
+- 效果先行：说明用户得到什么、怎样使用、成本与限制、需要决定什么；推荐附默认项和具体后果。
+- 术语一致：必要术语首次解释，后续使用同一名称；按当前决策调整表达，不给用户固定贴上专业程度标签。
+- 事实分层：区分已验证、推断和未验证；说明哪项检查能消除不确定性。
+- 深度适配：面向熟悉领域的用户说明契约、替代方案、失败方式、运维与维护；面向初学者说明后果和重议条件。
+- 提问边界：只问用户拥有决定权的结果选择；可查事实自行调查。数据库问记录是否保留及谁能访问，缓存问速度与实时性，本地或云端问设备、共享与数据外发。
+- 简短表达：缩短动作句，删除重复和连接词；保留条件、执行者、对象、授权与通过标准，不用模糊关键词掩盖决策、成本或限制。
 
-## Mandatory gates
+# 推进与完成
 
-Both modes: demos, design-only work, delegated choices, local-only scope — none
-waives a gate. Only an explicit user skip overrides a named stage; record the
-exception, never generalize it.
-
-| State | Allowed | Forbidden |
-| --- | --- | --- |
-| Intent unconfirmed | Local read-only inspection; clarification | Public research, proposals, architecture, project writes |
-| Gate 1 passed; research incomplete | Real online search, primary-source inspection | Solution selection, design drafting, project writes |
-| Research complete; Gate 2 unpassed | Evidenced recommendation, independent challenge, approval question | Design files, scaffolding, installs, artifacts |
-| Gate 2 passed | Approved delivery and checks | Unapproved scope or effects |
-
-**Gate 1:** show the brief; resolve user-owned choices; ask; stop for an explicit
-answer. **Gate 2:** present the researched, independently challenged solution plus
-the task outline and stage acceptance goals; ask; stop before writing design
-documents or artifacts. Design-only approval covers design, not implementation.
-
-Online search and primary-source inspection finish before design in every mode;
-local inspection supplements it. Missing access leaves research incomplete without
-the user's explicit scoped alternative.
-
-## Shape
-
-Brief: outcome and audience; scope and non-goals; constraints and compatibility;
-observable acceptance and feasible checks; delivery kind and depth; defaults and
-open choices. Batch independent choices with recommendations, effects and costs.
-Never ask a lookup-able fact; send technical unknowns to research. User-owned
-decisions — outcome, acceptance, cost, data exposure, compatibility, irreversible
-effects — are theirs; silence and "you choose" are not approval.
-
-## Continue and complete
-
-In-boundary refinement, the approved outline and acceptance-blocking fixes
-proceed within consent. Changed outcome, acceptance, cost, data exposure,
-compatibility or major architecture: confirm only the affected delta, continue
-unaffected work.
-
-Independent roles are separate contexts, not labels: adversarial design audit,
-distinct-model proposals for open creativity, parallel researchers, an independent
-acceptance author, a minimal-context user check at the finished result. One writer
-per file. Full separates requirements and standards verdicts; lite may use one
-reviewer for both.
-
-No subagents: run one adversarial check at the design step, label it
-`non-independent`; independent audit and acceptance stay pending. Self-review is
-never an independent pass.
-
-Finish with actual evidence, tested revision, limits and shortest use instructions;
-give a task summary brief and open a working product at its entry point.
+- 延续授权：范围内细化、已批准任务与阻塞验收的修复直接推进。
+- 变化确认：结果、验收、成本、数据暴露、兼容性或重大架构变化时，仅确认受影响部分；继续无关工作。
+- 独立角色：独立性来自不同上下文；设计需对抗审查，开放创意需不同模型提案，调研可并行，验收需独立作者，最终产物需最小上下文用户检查。
+- 单一写入：每个文件一个写入方；Full 的需求与规范分别审查，Lite 可由同一独立审查者给出两个结论。
+- 能力不足：无子代理时，在设计阶段自行做一次对抗检查并标记 `non-independent`；独立审查与验收保持待完成，不把自审算作独立通过。
+- 完成交付：给出任务总结、实际证据、已验证版本、限制与最短使用说明；打开可运行产品的入口。

@@ -18,7 +18,7 @@ const budgets = new Map([
   ['SKILL.md', 600], ['references/lite.md', 420], ['references/full.md', 1000],
   ['references/agents.md', 700], ['references/research.md', 550],
   ['references/verification.md', 800], ['references/records.md', 450],
-  ['references/plain-language.md', 220],
+  ['references/interview.md', 220],
 ]);
 const failures = [];
 const metrics = [];

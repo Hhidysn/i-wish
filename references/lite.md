@@ -1,53 +1,32 @@
 # Lite
 
-One bounded wish, journey or artifact; short inputs; one record. Inherit the
-entry's Gate 1/Gate 2, stop-and-wait and mandatory online-research rules. Lite
-changes planning depth, never the gates.
+- 适用范围：单一、边界清晰的愿望、流程或产物；使用短输入和一份记录。
+- 共同约束：沿用入口的 Gate 1 / Gate 2、停等确认与联网调研；Lite 只减少规划深度。
 
-## Decide
+# 决策
 
-Short outcome card from known facts. Ask only missing material choices; confirm
-intent. Research this journey's consequential decisions from current primary
-evidence plus existing project patterns. One real question: one researcher;
-independent questions may run concurrently. Reuse valid findings.
+1. 意图确认：按 [interview.md](interview.md) 整理简短结果卡，只问缺失的重要选择，完成 Gate 1。
+2. 定向调研：结合当前一手证据与项目惯例，研究本流程的重要决策；一个问题由一名研究者处理，独立问题可并行，有效结论可复用。
+3. 开放创意：产品方向未定时，按 [agents.md](agents.md) 由两个不同可用模型隔离提案，只讨论重要替代项或遗漏；已定细节跳过此轮。
+4. 最小方案：说明完整做法、真实替代方案、复用选择、成本、限制与检查。
+5. 独立质询：冻结推荐方案，由新上下文独立审查，关闭阻塞项。
+6. 方案批准：将方案、少量可观察增量及交付范围一起提交 Gate 2；每个增量注明目标、依赖、写入方、检查与恢复方式。
 
-Product direction still open: isolated proposals from two distinct available models
-under [agents.md](agents.md); discuss only consequential alternatives or omissions.
-Settled details skip that round.
+# 产出与检查
 
-Recommend the smallest complete approach, real alternatives, reuse choices,
-cost and limits, and checks. Freeze it; obtain one fresh independent design
-challenge. Close blockers; confirm solution, the few observable increments
-(goal, dependencies, writer, check, recovery) and delivery scope together.
+- 最少记录：一份短说明即可，不强制文档套件或任务服务；先产出正常端到端路径，再补齐其余已批准行为。
+- 独立验收：产物形成后，派发独立于产出者的新作者；先按需求冻结用例，再接触实现，遵循 [verification.md](verification.md)。
+- 合并调用：验收作者冻结用例后，可在同次调用中审查；需求与规范分别给出结论，保留冻结基线。
+- 写入归属：只读作者返回精确补丁，由主代理应用。
+- 用户检查：由另一名新身份检查最终产物；只给普通用户材料和隔离测试数据，不逐个检查内部步骤。
+- 并行条件：状态隔离时，验收与用户检查可对同一候选版本并行执行。
+- 检查方式：静态、视觉、文档或配置产物可用交互、渲染或通读检查，无需新框架；计划中的检查不算执行证据。
 
-## Produce and check
+# 轻量边界
 
-One short note suffices; no compulsory document suite or task service. Produce the
-normal end-to-end path first, then remaining approved behavior.
-
-After the artifact forms, dispatch a fresh acceptance author different from the
-producer. It freezes requirement-derived cases before seeing the work, then may
-review in the same call with separate requirements and standards verdicts; follow
-[verification.md](verification.md). Keep the frozen baseline. Read-only authors
-return exact patches; primary applies them.
-
-A different fresh user identity tries the finished deliverable, not each internal
-step. Give ordinary user material and isolated test data only. Acceptance checks
-and the user run may go concurrently on the same candidate when state is isolated.
-Static, visual, document or configuration work can use interaction, rendered or
-read-through checks; no new framework needed. A planned check is not executed evidence.
-
-## Keep it light
-
-- Read current-phase references only; batch small related work and checks.
-- Bound each dispatch to one decision, journey or artifact.
-- Reuse research and audits while versions, scope and assumptions hold.
-- Real accounts, sensitive data, lasting formats, irreversible effects, ongoing
-  operation or coupled modules trigger the affected [full.md](full.md) controls;
-  keep valid approvals.
-- Missing roles or tools: disclose, run one adversarial check yourself, label it
-  `non-independent`, continue feasible work, keep independent acceptance pending.
-
-Design-only: review design, sources and coverage; runtime and user effects stay
-unverified. Finish with the runnable result or artifact, actual evidence, limits
-and shortest use instructions.
+- 按需加载：只读当前阶段参考，合并相关小任务与检查；每次派发限定一个决策、流程或产物。
+- 证据复用：版本、范围和假设仍成立时，复用调研与审查。
+- 风险升级：真实账户、敏感数据、长期格式、不可逆影响、持续运维或耦合模块触发相应 [Full](full.md) 控制，保留有效批准。
+- 能力不足：缺少角色或工具时说明限制，自行做一次对抗检查并标记 `non-independent`；继续可行工作，独立验收保持待完成。
+- 纯设计：检查设计、来源与覆盖；运行行为和用户效果仍未验证。
+- 最终交付：提供可运行结果或产物、实际证据、限制与最短使用说明。

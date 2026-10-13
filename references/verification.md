@@ -1,96 +1,59 @@
-# Independent verification
+# 独立验证
 
-Read when choosing checks, before dispatching an evaluator, and at closeout.
-Requirements are the oracle; execution determines the result. Define observable
-acceptance and feasible checks before producing; no separate mandatory pre-production
-test round.
+- 使用时机：选择检查、派发评估者前及收尾时读取。
+- 判断依据：需求决定标准，实际执行决定结果；产出前定义可观察验收与可行检查，不额外强制一轮产出前测试。
 
-## Acceptance authorship
+# 验收编写
 
-After the artifact forms, dispatch a fresh author different from the producer. First
-inputs: approved behavior and acceptance, public interfaces, failure rules, harness
-and fixtures, runnable entry. Exclude implementation, producer reasoning, self-check
-verdicts and suggested assertions. Freeze requirement-derived normal, boundary,
-error, state and recovery, and integration cases before exposure to the work.
+- 独立作者：产物形成后，派发不同于产出者的新上下文作者。
+- 初始输入：已批准行为与验收、公开接口、失败规则、测试设施与数据、可运行入口；排除实现、产出者推理、自测结论和建议断言。
+- 用例冻结：接触实现前，按需求冻结正常、边界、错误、状态与恢复、集成用例。
+- 检查落地：将用例映射到现有设施，编写有意义的测试、检查或场景；静态、视觉、文档与配置可用交互、渲染或通读。
+- 角色边界：产出者自测仅作补充；Lite 可在作者后续同次调用中审查，Full 的需求与规范分别使用独立上下文。
+- 写入归属：遵循 [agents.md](agents.md)；原生只读作者返回精确补丁，主代理应用并运行，分别记录作者、应用者和执行者。
+- 修改边界：仅执行适配可由应用者处理；预期、数据或语义变化退回作者，产品修复交给写入方。
+- 分歧处理：以已批准行为为准裁决，记录理由。
+- 最小验证：可行时先复现修复前失败，再确认修复后通过；只运行覆盖验收所需检查，新增失败或风险才扩大。
+- 证据门槛：已写测试、未运行补丁、仅 mock 检查和 dry run 均不能证明真实行为。
+- 检查记录：`Run:` 操作、`Expected:` 可观察结果、`Observed:` 实际发生情况；没有完成观察的声明不算证据。
 
-Then map cases to the harness and write meaningful tests, checks or scenarios. Use
-the existing infrastructure; static, visual, document or configuration work may need
-interaction, rendered inspection or read-through rather than new automated tests.
-Producer self-checks remain supplemental. Lite may combine this author's later review
-in the same call; full uses separate requirements and standards review contexts.
+# 独立审查
 
-Respect [agents.md](agents.md): native read-only authors return exact patches; primary
-applies and runs them. Record author, applier and executor separately. Execution-only
-harness adjustments are allowed; expectation, fixture or semantic changes return to
-the author. Resolve disputes against approved behavior and record reasons. Product
-fixes go to the writer.
+- 固定范围：锁定候选版本与变更范围，包含相关未跟踪改动。
+- 双重结论：需求与规范分别给出结论，一方通过不能抵消另一方失败。
+- 上下文隔离：Full 使用不同的新审查上下文；Lite 可在行为用例冻结后，由一名独立审查者覆盖两项。
+- 用户检查：审查不能替代用户检查；修复后只复查受影响范围，不重查已确定的无关模块。
+- 基线保护：变更不得降低阈值、删除或跳过检查、加入空实现；对照已批准基线，没有目标时先测量基线，只能改善。
 
-Prefer a reproduced pre-fix failure and post-fix pass when feasible. Authored tests,
-unexecuted patches, mock-only checks and dry runs do not establish real behavior.
-Run the smallest checks that cover acceptance; broaden only for new failure or risk.
+# 最小上下文用户检查
 
-Write each planned check as `Run:` the operation, `Expected:` the observable result,
-then `Observed:` what actually happened. A claim without a completed observation is
-not evidence.
+- 独立身份：使用未参与产出、测试或审查的新身份。
+- 最小输入：用户任务、可见规则、普通启动 / 安装 / 帮助材料、真实入口、隔离的合成数据或账户、环境限制和可识别候选版本。
+- 排除信息：不提供源码、内部设计、开发者结论、测试用例、隐藏预期或逐步成功路线；后续补充的信息逐项记录。
+- 真实操作：自行发现并通过真实 UI、CLI、API、文档或产物完成任务，再尝试相关错误与恢复。
+- 观察记录：记录尝试、困惑、观察、结果和可复现缺陷，必要时截图；首份报告后由主代理映射验收，缺失观察仍算缺失证据。
+- 真实依赖：验证所声明范围时使用其真实依赖；与其他检查并行须隔离状态，否则串行交互。
+- 能力限制：工具、硬件或历史隔离不支持时，对应检查保持未验证；代理体验只是用户模拟，不能替代真人主观判断。
+- 人工确认：仅在约定验收或授权要求时等待真人签字。
 
-## Reviews
+# 证据与失效
 
-Pin the candidate and the change range, including relevant untracked changes.
-Requirements and standards receive separate verdicts; one pass cannot cancel the
-other's failure. Full uses separate fresh reviewer contexts; lite may use one
-independent reviewer for both axes after behavior-derived checks are frozen. Neither
-replaces the user check. Recheck affected fixes, not settled unrelated modules.
+| 证据字段 | 内容 |
+| --- | --- |
+| 验收对象 | 验收 ID、检查、角色身份、提供的输入 |
+| 被测状态 | 设计与契约版本、候选标识、环境与数据 |
+| 实际执行 | Run、Expected、Observed、产物或复现步骤 |
+| 结果状态 | 通过、失败、未运行、过时、明确例外 |
+| 剩余工作 | 未覆盖行为、下一步 |
 
-The changed range must not lower thresholds, delete or skip checks, or add empty
-implementations. Compare against the approved baseline; without a target, measure the
-baseline first and only improve.
+- 候选标识：commit 只标识干净且全部提交的被测树；脏工作区或非 Git 产物需文件、相关未跟踪检查和产物指纹，或等价的可复现标识。
+- 独立产物：文档、渲染结果或远程配置快照需各自标识；确认评估者实际使用了哪个候选，hash 本身不能证明执行。
+- 变更失效：在新候选上重跑受影响证据；保留未受影响证据时说明适用依据。
+- 集成覆盖：build 或 typecheck 只证明自身检查范围；最终检查覆盖变化和未覆盖的跨系统路径，单个模块完成不能证明集成。
 
-## Minimal-context user check
+# 完成判断
 
-Separate new identity, uninvolved in producing, testing or reviewing. Inputs: user
-job, visible rules, ordinary launch, install or help material, the real entry, isolated
-synthetic data or account, environment limits and an identifiable candidate. No source,
-internal design, developer conclusions, test cases, hidden expected observations or a
-step-by-step successful route. Log any later information supplied.
-
-Let it discover and complete the job through the real UI, CLI, API, document or
-deliverable, then explore a relevant mistake and recovery. Record attempts, confusion,
-observations, outcome and reproducible defects; captures when useful. Primary maps
-observations to acceptance after the first report; missing observations remain missing
-evidence.
-
-Use real declared dependencies for the claimed scope. Isolate state when checks and
-the user run concurrently, otherwise serialize interactions. Unsupported tools,
-hardware or history isolation leave the corresponding check unverified. An agent
-experience is a user simulation, not personal human judgment. Wait for human sign-off
-only when agreed acceptance or authorization requires it.
-
-## Evidence, invalidation and completion
-
-For each criterion record:
-
-```text
-Acceptance ID / check / role identity / supplied inputs
-Design and contract versions / candidate identity / environment and data
-Run / Expected / Observed / artifact or reproduction
-Passed / failed / not-run / stale / explicit exception
-Uncovered behavior / next action
-```
-
-A commit identifies a clean, fully committed tested tree only. For dirty or non-Git
-work, fingerprint the tested files, relevant untracked checks and the artifact, or use
-an equivalent reproducible identity. A document, rendered output or remote
-configuration snapshot needs its own identity. Establish which candidate the evaluator
-actually used; a hash alone does not prove execution.
-
-Changes invalidate affected evidence. Rerun it on the changed candidate; retain
-unaffected evidence only with applicability explained. Build or typecheck proves its
-own surface, not an integrated journey. Final checks cover changed and uncovered
-cross-system paths; completed modules alone cannot prove integration.
-
-Close acceptance-blocking defects; other improvements are separate work. Repeated
-failure without new evidence needs diagnosis or a changed approach. Never weaken
-criteria, average verdicts or turn missing capability into a pass. Design-only: check
-coverage, contracts, sources and failure scenarios; runtime stays pending. Completion
-requires requested scope, current required checks, closed blockers, reconciled records
-and use or recovery guidance; otherwise report partial delivery.
+- 阻塞关闭：修复阻塞验收的缺陷，其他改进另列工作；没有新证据的重复失败须诊断或换方法。
+- 禁止降标：不弱化标准、不平均审查结论、不把能力缺失当作通过。
+- 纯设计：检查覆盖、契约、来源与失败场景，运行验证保持待完成。
+- 完成条件：要求范围交付、所需检查有效、阻塞项关闭、记录一致、使用或恢复说明齐备；否则报告部分交付。

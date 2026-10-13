@@ -1,64 +1,45 @@
-# Records and resume
+# 记录与恢复
 
-Read when saving approved facts, pausing, resuming or closing an increment. Use
-existing conventions; create useful records only. Lite usually needs one feature or
-task note; full an index linking scope, contracts, tasks and evidence.
+- 使用时机：保存已批准事实、暂停、恢复或结束增量时读取。
+- 最少记录：遵循现有惯例，只建有用记录；Lite 通常一份功能或任务说明，Full 用索引连接范围、契约、任务与证据。
 
-## State and templates
+# 状态与内容
 
-```text
-Mode / current phase / requested delivery
-Approved scope and solution / actual user confirmation or named stage exception
-Canonical requirements / research / design, contract and audit versions
-Tasks / owners / typed dependencies / blockers
-Checks actually executed / tested candidate / passed, failed, not-run, stale
-Unresolved choices / limits / next permitted action
-```
+- 当前阶段：模式、阶段、要求的交付物。
+- 批准依据：已批准范围与方案、用户实际确认或明确的阶段例外；代理编写的简报和推荐均不算用户确认。
+- 有效版本：需求唯一来源、调研、设计、契约和审查版本。
+- 任务状态：任务、负责人、带类型的依赖与阻塞项。
+- 检查证据：实际执行的检查、被测候选版本，以及通过、失败、未运行、过时状态。
+- 待办边界：未决选择、限制与下一步允许动作。
+- 需求简报：按 [interview.md](interview.md#需求简报) 记录结果、范围、约束、验收、交付深度与待定项。
+- 方案推荐：体验、边界、替代方案、复用或自建、义务、风险、委派细节、首次验证与交付范围。
+- 决策记录：背景、选择、最有力的替代方案（含维持现状）、排除理由、收益与成本、验证和重议条件。
+- 证据引用：格式遵循 [verification.md](verification.md)，链接原始记录，不重复抄写。
 
-Brief: outcome and audience; scope and non-goals; constraints and compatibility;
-acceptance and checks; delivery kind and depth; defaults and unknowns. Recommendation:
-experience, boundaries, alternatives, reuse or custom, obligations, risks, delegated
-details, first proof and delivery scope. Neither agent-written artifact is user
-confirmation.
+# 保存位置
 
-Decision: context, choice, strongest alternatives including keep-current, rejection
-reasons, benefits and costs, validation and revisit conditions. Evidence follows
-[verification.md](verification.md); link instead of duplicating.
+无既有约定时使用：
 
-## Locations
-
-| Purpose | Default when no convention exists |
+| 内容 | 位置 |
 | --- | --- |
-| Implemented overview, quick start, navigation | README |
-| Current behavior, architecture, contracts, usage | docs/design or topic docs |
-| Important decisions and alternatives | docs/decisions |
-| Reusable dated primary-source findings, source map | docs/research or feature note |
-| Proposed changes, task and milestone state, handoff | Existing feature or task record |
-| Superseded narratives, completed temporary plans | docs/history |
+| 已实现概览、快速开始、导航 | README |
+| 当前行为、架构、契约、用法 | docs/design 或专题文档 |
+| 重要决策与替代方案 | docs/decisions |
+| 带日期的一手调研与来源索引 | docs/research 或功能说明 |
+| 提议改动、任务和阶段状态、交接 | 现有功能或任务记录 |
+| 过时叙述、已完成的临时计划 | docs/history |
 
-Keep accepted decisions at stable paths; mark superseded scope and preserve
-rationale. Current docs describe implemented truth; pending details stay explicitly
-proposed. Define shared vocabulary only when useful, one canonical term.
+- 稳定路径：已接受决策保留原路径，标记被替代范围并保留理由。
+- 当前事实：正式文档只写已实现内容；待做细节明确标记为提议。
+- 共享术语：有实际用途才定义，一事一名。
+- 收尾同步：更新行为、契约、就绪状态、证据、决策与链接；保留一份当前状态表，审查轮次历史另存。
+- 结论依据：区分已修发现和新未决工作；数量与完成声明来自具名、可重跑检查。
 
-Reconcile at close: changed behavior, contracts, readiness, evidence, decisions and
-links. One current status table; review-round history separately. Distinguish fixed
-findings from new unresolved work. Counts and completion claims come from named
-rerunnable checks.
+# 恢复与交付
 
-Resume: inspect actual files and candidate, then checkpoint; validate approvals,
-contract versions and evidence freshness before redispatching. Missing or stale
-evidence blocks dependent tasks that need it. Research to obtain or refresh that
-evidence may be ready. Finish unaffected authorized work; ask only missing or changed
-material decisions.
-
-## Delivery
-
-Give a task summary brief: what was requested, what was produced, the tested
-revision or artifact identity, the checks run and observed results, remaining
-limits, and shortest use or recovery instructions. Open a working product at its
-entry point so the user meets the real deliverable; if it cannot be opened, say so,
-never claim success.
-
-Handoff: goal, completed work, canonical decisions, checks, risks, next action. No
-secrets, irrelevant dialogue, empty templates or duplicate history trees. Local
-completion does not add publication, deployment or external-tracker authorization.
+- 恢复顺序：先检查实际文件和候选产物，再读检查点；重新派发前核实批准、契约版本与证据时效。
+- 依赖阻塞：缺失或过时证据阻塞依赖任务；获取或更新证据的调研可就绪。完成不受影响的已授权工作，只问缺失或变化的重要决策。
+- 交付简报：说明原始要求、实际产物、被测 revision 或产物标识、已运行检查与结果、剩余限制、最短使用或恢复步骤。
+- 真实入口：打开可运行产品供用户使用；打不开须如实说明，不宣称成功。
+- 交接内容：目标、已完成工作、决策唯一来源、检查、风险、下一步；不放秘密、无关对话、空模板或重复历史目录。
+- 外部动作：本地完成不增加发布、部署或写入外部任务系统的授权。

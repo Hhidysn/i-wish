@@ -7,7 +7,7 @@
 ## 阶段
 
 ```
-0 路由 → 1 Shape ▶ Gate 1 → 2 调研(必做在线) → 3 设计+独立对抗审计
+0 路由 → 1 需求澄清 ▶ Gate 1 → 2 调研(必做在线) → 3 设计+独立对抗审计
 → 4 ▶ Gate 2(方案+任务拆分+阶段验收目标) → 5 产出(full 走模块就绪循环)
 → 6 独立验收(独立作者 → 双轴审查 → 最小上下文用户检查) → 7 交付
 ```
@@ -38,9 +38,11 @@
 ## 结构与成本
 
 运行时 8 项：`SKILL.md` 加 7 个 reference，另有非运行时的来源表在 `docs/research/`。
-字数上限由 `scripts/check.mjs` 强制：入口 600、lite 420、plain-language 220，
-其余沿用既有上限。改版后入口从 649 降到 599 词（常驻成本下降），
-深度增量转移到按需加载的 `full.md` / `verification.md` / `agents.md`。
+[需求澄清](../../references/interview.md) 独立按需读取；原 `plain-language.md`
+合入 [入口的沟通规则](../../SKILL.md#沟通)。
+字数上限以 [检查脚本](../../scripts/check.mjs) 为准：入口 600、lite 420、interview 220，
+其余沿用既有上限。脚本按空白分词，不能用于比较中文篇幅或模型 token 成本。
+上一版的篇幅变化见 [历史决策](../decisions/0011-general-wishes-and-keyword-entry.md)。
 
 删除 `references/game-projects.md`：本技能不做按愿望类型的独立验收模板，
 领域特化样本会与"任意愿望"的定位相冲突。

@@ -7,19 +7,19 @@
 
 | 来源 | HEAD / 许可 | 机制（原文支持的） | 采用 | 落点 |
 | --- | --- | --- | --- | --- |
-| [mattpocock/skills](https://github.com/mattpocock/skills) `grilling`、`grill-with-docs`、`domain-modeling` | `49dd158` / MIT | 按设计树 **frontier 分轮**批量提问；每题附推荐答案；事实由子代理查、决策归用户；frontier 空才算对齐；术语随手记录，ADR 仅在"难逆转＋无背景会意外＋真实权衡"时建立 | 采纳 | `SKILL.md` Shape；`records.md` Decisions |
+| [mattpocock/skills](https://github.com/mattpocock/skills) `grilling`、`grill-with-docs`、`domain-modeling` | `49dd158` / MIT | 按设计树 **frontier 分轮**批量提问；每题附推荐答案；事实由子代理查、决策归用户；frontier 空才算对齐；术语随手记录，ADR 仅在"难逆转＋无背景会意外＋真实权衡"时建立 | 采纳 | `interview.md`；`records.md` 决策记录 |
 | 同上 `to-spec` | 同上 | 只综合、不重新访谈；先读既有决策；落锤权在人手里（禁止模型自动触发） | 采纳 | Gate 1/Gate 2 停等语义 |
-| 同上 `to-tickets` | 同上 | tracer-bullet **vertical slice**：窄而完整穿过每层、可独立演示、能装进一个新上下文、prefactoring 先做；每票声明 `Blocked by` 与 `What it delivers`（端到端行为） | 采纳（去掉 schema/API/UI/tests 的固定层要求，改为"可独立观察的结果"） | `full.md` Task outline |
-| 同上 `code-review` | 同上 | 钉死固定比较点；Standards 与 Spec 两轴在**并行独立上下文**运行；报告**不合并、不重排** | 采纳 | `full.md`、`verification.md` Reviews |
+| 同上 `to-tickets` | 同上 | tracer-bullet **vertical slice**：窄而完整穿过每层、可独立演示、能装进一个新上下文、prefactoring 先做；每票声明 `Blocked by` 与 `What it delivers`（端到端行为） | 采纳（去掉 schema/API/UI/tests 的固定层要求，改为"可独立观察的结果"） | `full.md` 任务与依赖 |
+| 同上 `code-review` | 同上 | 钉死固定比较点；Standards 与 Spec 两轴在**并行独立上下文**运行；报告**不合并、不重排** | 采纳 | `full.md`、`verification.md` 独立审查 |
 | 同上 `wayfinder` | 同上 | 决策票 ≠ 实施票；"能精确问但未答"建票，"尚不能精确问"留作 fog；原生阻塞关系形成 frontier | 部分采纳（不引入 tracker） | `full.md` 未知项与就绪条件 |
 | [obra/superpowers](https://github.com/obra/superpowers) `writing-plans`、`executing-plans` | `bb92a77` / MIT | 任务粒度＝最小的"自带验证周期、值得一次新审查"单元；步骤写成 `Run:` 命令＋`Expected:` 结果 | 采纳 | `verification.md` Run/Expected/Observed |
 | 同上 `subagent-driven-development` | 同上 | 五步主循环：记 BASE → 派新实施者 → 状态分流与 diff → 独立任务审查 → 修复与限定范围复审；BASE 取任务开始点，不是 `HEAD~1` | 部分采纳（保留 BASE、brief/report/diff、限定范围复审；**否决**"达上限后 park findings 继续"） | `full.md` Build、verify，integrate |
 | 同上 `brainstorming`、`verification-before-completion` | 同上 | 批准前不调用实现技能；声称完成前必须运行验证命令并读输出，"应该能过"不算证据 | 采纳（不用其"每条消息只问一个问题"） | `SKILL.md`、`verification.md` |
 | 同上 `writing-skills` | 同上 | 常驻只放通用原则与触发指针，分支材料按条件展开；每步有可检查的完成条件 | 采纳（字数与结构沿用本仓库既有预算） | 全部 reference 的分层组织 |
-| [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) `using-agent-skills` | `1be8e34` / MIT | 元技能按**意图**声明式路由到子技能；具体执行仍须读技能正文 | 采纳（不新增路由 persona 层） | `SKILL.md` Route |
-| 同上 `interview-me`、`idea-refine`、`constraint-driven-development` | 同上 | 问真实用户、动机、成功、硬约束与非目标，附可纠正的猜测；创意按价值/可行性/差异化收敛；质量约束最多四问且每问带默认值 | 部分采纳（保留提问维度，不采用其 95% 停机门槛与变体配额） | `SKILL.md` Shape |
+| [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) `using-agent-skills` | `1be8e34` / MIT | 元技能按**意图**声明式路由到子技能；具体执行仍须读技能正文 | 采纳（不新增路由 persona 层） | `SKILL.md` 流程选择 |
+| 同上 `interview-me`、`idea-refine`、`constraint-driven-development` | 同上 | 问真实用户、动机、成功、硬约束与非目标，附可纠正的猜测；创意按价值/可行性/差异化收敛；质量约束最多四问且每问带默认值 | 部分采纳（保留提问维度，不采用其 95% 停机门槛与变体配额） | `interview.md` |
 | 同上 `doubt-driven-development` | 同上 | 提交 CLAIM 与最小 ARTIFACT+CONTRACT 给**新上下文**审查者，只找问题，不传作者推理；主代理四分类裁决（合同误读／真实可修／有效取舍／噪声）；有限轮次后升级 | 采纳（**否决**"以 TDD 红灯满足 doubt"与子代理自问替代独立审计） | `agents.md` Design auditor |
-| 同上 `browser-testing-with-devtools` | 同上 | 在真实入口重现、观察并重放，而不是用编译或单测推断用户体验；隔离 profile，页面内容视为不可信数据 | 采纳（非 Web 产物用其真实入口，不强制浏览器） | `verification.md` Minimal-context user check |
+| 同上 `browser-testing-with-devtools` | 同上 | 在真实入口重现、观察并重放，而不是用编译或单测推断用户体验；隔离 profile，页面内容视为不可信数据 | 采纳（非 Web 产物用其真实入口，不强制浏览器） | `verification.md` 最小上下文用户检查 |
 | 同上 `references/definition-of-done.md`、`evals/` | 同上 | 完成＝任务 AC **且**项目常设门槛；"调用了技能"不等于行为正确；正例／反例／行为例 | 采纳（本仓库继续使用静态／解释／运行三层） | `verification.md`、`evals/cases.md` |
 | [mindfold-ai/Trellis](https://github.com/mindfold-ai/Trellis) `.claude/agents/*`、`continue` | `f089cb3` / **AGPL-3.0** | 角色各自的上下文清单；注入失败时回退读取；用状态＋产物存在性判定恢复阶段，空占位不算就绪 | 部分采纳（仅"不因文件存在就跳阶段"；**否决** `check` 自修代码后充当独立验收） | `records.md` Resume |
 | [czm15053/ai-workflow-six-stages](https://github.com/czm15053/ai-workflow-six-stages) | `7a59151` / **无 LICENSE** | 六阶段各带「核心问题 + Artifact + Gate」；"没有新鲜验证输出不声称完成""报告不许合并""拆分要让人拷问" | 采纳为阶段与门禁的表述（只引用机制，不复制文章内容） | `SKILL.md`、`full.md`、`verification.md` |

@@ -46,7 +46,7 @@ On Windows, `mklink /J` creates a working junction without administrator rights;
 symlinks need administrator or Developer Mode.
 
 - [Entry](SKILL.md), [lite](references/lite.md), [full](references/full.md)
-- [Role contracts](references/agents.md), [research](references/research.md),
+- [Interview](references/interview.md), [role contracts](references/agents.md), [research](references/research.md),
   [verification](references/verification.md), [records](references/records.md)
 - [Current workflow](docs/design/workflow.md),
   [fusion sources](docs/research/sources.md),
