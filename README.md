@@ -9,9 +9,10 @@ Turn an unsettled wish — a demo, a module change, a document, a media piece, a
 plan or a configuration — into clear outcomes, researched choices, an audited
 design and independently verified delivery. One installable skill, two workflows.
 
-[Metaplanning](SKILL.md#元规划) responds to capability gaps across stages:
-clarify outcomes and quality goals, research needed methods, revise execution
-when evidence warrants it, and verify the result.
+[Capability diagnosis](references/plan.md#一能力诊断调研第一步必做) opens every
+research phase: four questions about knowledge, method, tools and evaluation,
+then search only where a real gap exists. The model assumes its own knowledge
+is stale for versions, APIs, prices and platform rules.
 
 | Mode | Use for | Planning |
 | --- | --- | --- |
@@ -49,9 +50,9 @@ model routes and permissions.
 On Windows, `mklink /J` creates a working junction without administrator rights;
 symlinks need administrator or Developer Mode.
 
-- [Entry](SKILL.md), [lite](references/lite.md), [full](references/full.md)
-- [Interview](references/interview.md), [role contracts](references/agents.md), [research](references/research.md),
-  [verification](references/verification.md), [records](references/records.md)
+- [Entry](SKILL.md), [interview](references/interview.md), [plan](references/plan.md),
+  [build and verification](references/build.md), [role contracts](references/agents.md),
+  [records](references/records.md)
 - [Current workflow](docs/design/workflow.md),
   [fusion sources](docs/research/sources.md),
   [earlier comparison](docs/research/workflow-comparison.md)

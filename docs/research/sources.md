@@ -58,7 +58,7 @@
 
 - 本地来源：用户提供的 `meta-scout-manual-skill/meta-scout/SKILL.md`；已阅读其能力缺口、二阶搜索、条件三阶、基线比较与停止规则，独立编写本包指令，未复制正文或引入依赖。
 - 讨论来源：[用户提供的二阶规划讨论](https://chatgpt.com/share/6ace4ea8-bfa0-83e9-add5-c21f5d337720)，用于需求背景；其模型训练与收益猜测不作为事实或效果证据。
-- 采纳范围：能力包括专业知识、来源、方法、工具正确用法与评价；按缺口自动触发，覆盖 Interview、Research、执行、验证与方法复用。运行规则见 [入口](../../SKILL.md#元规划) 及各阶段参考。
+- 采纳范围：能力包括专业知识、来源、方法、工具正确用法与评价；按缺口自动触发，覆盖 Interview、Research、执行、验证与方法复用。运行规则见 [能力诊断](../../references/plan.md#一能力诊断调研第一步必做) 及各阶段参考。
 - 用户补充：追车 CG 的电影运镜研究示例用于说明未点名的专业能力与质量机会；没有将视频观感、代理数量或特定模型训练推测写成规则依据。
 - 冲突裁定：不采用 meta-scout 的手动限定、软件专属范围、三套模式、搜索数量配额和默认离线替代；保留 i-wish 的 Lite / Full、强制联网、两道门禁与独立验证。
 - 效果边界：指令与场景检查不能证明交付质量提升；可比运行评估见 [行为案例](../../evals/cases.md#r04--元规划的交付与收益证据)。
@@ -71,9 +71,9 @@
 
 | 来源与版本 | 可核查事实 | 采用边界与本包落点 |
 | --- | --- | --- |
-| [Opus 5.5 发布材料](https://www.anthropic.com/claude-opus-5-5)，2026-09-22 | 收录长时、多仓库任务，以及减少重复步骤、查第三方文档定位问题的客户案例 | 厂商实验与选择性证言不能证明普遍领先；复用 [专业研究](../../references/research.md#能力与方法)，要求研究结果进入方法、依赖或检查 |
-| [Opus 5.5 提示与宿主指南](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5)，访问时版本 | 多应用任务可能漏看未点名的上下文，明确要求先探索在 medium/max 下都改善完成情况；长任务可能用进度说明结束回合，必要后台任务仍须收取结果 | 复用 [能力盘点](../../SKILL.md#元规划)，以本轮场景检查现有收尾行为。不照搬跨账户广泛扫描，不在技能中实现自动续跑，也不推断训练配方 |
-| [Spec Coding：24 次运行](https://spec-coding.dev/examples/agent-runs/)，Claude Code 2.1.284 / claude-opus-5-5，2026-09-28 | 三个小任务中，规范条件 9/9 全通过，其他条件 7/15；规范、文档和隐藏验收由同一团队编写，每变体仅三次 | 说明约束与验收会影响结果，不能推导总体胜率；复用 [Interview](../../references/interview.md) 与 [独立验收](../../references/verification.md#验收编写) |
+| [Opus 5.5 发布材料](https://www.anthropic.com/claude-opus-5-5)，2026-09-22 | 收录长时、多仓库任务，以及减少重复步骤、查第三方文档定位问题的客户案例 | 厂商实验与选择性证言不能证明普遍领先；要求研究结果进入方法、依赖或检查 |
+| [Opus 5.5 提示与宿主指南](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5)，访问时版本 | 多应用任务可能漏看未点名的上下文，明确要求先探索在 medium/max 下都改善完成情况；长任务可能用进度说明结束回合，必要后台任务仍须收取结果 | 复用 [能力诊断](../../references/plan.md#一能力诊断调研第一步必做)，以本轮场景检查现有收尾行为。不照搬跨账户广泛扫描，不在技能中实现自动续跑，也不推断训练配方 |
+| [Spec Coding：24 次运行](https://spec-coding.dev/examples/agent-runs/)，Claude Code 2.1.284 / claude-opus-5-5，2026-09-28 | 三个小任务中，规范条件 9/9 全通过，其他条件 7/15；规范、文档和隐藏验收由同一团队编写，每变体仅三次 | 说明约束与验收会影响结果，不能推导总体胜率；复用 [Interview](../../references/interview.md) 与 [独立验收](../../references/build.md#独立验证) |
 | [同实验 API 案例](https://spec-coding.dev/examples/agent-runs/api-error-envelope)，同版本 | 缺契约的三次运行中两次把移动端读取的 error 字符串改为对象；提供契约后没有该破坏，但仍未统一所有错误结构；各次自测均通过 | 分别检查消费者兼容性、目标覆盖和实际结果；不把自测成功当交付成功 |
 | [Sonar Java 评测](https://www.sonarsource.com/blog/claude-opus-5-5-an-evaluation/)，预发布构建，2026-09-22 | 4,444 个代码分析任务，功能通过率仅测其中 544 个：87.7% 对 Opus 5 的 88.6%；代码量少 27.5%，并发静态问题密度高 44% | 单语言与静态发现有局限，密度不等于问题绝对数；简洁实现不能替代正确性、并发与领域质量验证 |
 | [ts-rust 作者说明](https://github.com/pingdotgg/ts-rust)及[工作规则](https://github.com/pingdotgg/ts-rust/blob/main/AGENTS.md)，访问时 main | 作者报告 Opus 5.5 参与编译器移植；公开规则要求绑定候选版本、独立复核、保存状态、核实运行任务并在多轮失败后重议 | 作者叙述及动态仓库不构成受控模型比较；复用 [记录与恢复](../../references/records.md)，不照搬该项目的代理配额、构建流程或持续执行授权 |

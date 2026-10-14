@@ -26,7 +26,7 @@ These cases distinguish three evidence levels:
 
 ### S03 — Local Markdown targets and real heading anchors
 
-**Input:** Add a local link to a nonexistent file. In another variant, link to `references/lite.md#imaginary` when “Imaginary” appears only inside a fenced code block, not as a real heading.
+**Input:** Add a local link to a nonexistent file. In another variant, link to `references/build.md#imaginary` when “Imaginary” appears only inside a fenced code block, not as a real heading.
 
 **Expected observables:** Each variant exits 1 and identifies the broken target or missing anchor. A link to an actual heading in a required reference passes.
 
@@ -58,11 +58,11 @@ These cases distinguish three evidence levels:
 
 ### S07 — Runtime set and budgets match the shipped two-tier package
 
-**Input:** Run the checker on a valid package. Then, in separate variants, set `SKILL.md` to 601 words, set `references/lite.md` to 421 words, and edit `docs/research/sources.md`.
+**Input:** Run the checker on a valid package. Then, in separate variants, set `SKILL.md` to 601 words, set `references/plan.md` to 551 words, set `references/build.md` to 451 words, add `references/extra.md` without a budget entry, and edit `docs/research/sources.md`.
 
-**Expected observables:** The valid package reports eight runtime rows covering `SKILL.md` and the seven shipped references. Each over-budget variant exits 1 and names the file and its limit. Editing `docs/research/sources.md` leaves `runtimeSHA256` unchanged.
+**Expected observables:** The valid package reports six runtime rows covering `SKILL.md` and the five shipped references. Each over-budget variant exits 1 and names the file and its limit. Adding a top-level reference without an explicit budget exits 1 and names that file; a reference nested deeper under `references/` keeps the default budget. Editing `docs/research/sources.md` leaves `runtimeSHA256` unchanged.
 
-**Failure conditions:** A missing or stale budget entry passes, an unknown reference falls back to a permissive default, or a docs-only edit changes the runtime fingerprint.
+**Failure conditions:** A missing or stale budget entry passes, an unknown top-level reference falls back to a permissive default, or a docs-only edit changes the runtime fingerprint.
 
 ## Forward interpretation
 

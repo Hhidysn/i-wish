@@ -9,8 +9,8 @@ import { fileURLToPath } from 'node:url';
 const checker = fileURLToPath(new URL('../scripts/check.mjs', import.meta.url));
 const roots = [];
 const references = {
-  lite: 'Lite Guide', full: 'Full Workflow', agents: 'Agent Roles', research: 'Research',
-  verification: 'Verification', records: 'Records', interview: 'Interview',
+  plan: 'Plan', build: 'Build', agents: 'Agent Roles',
+  records: 'Records', interview: 'Interview',
 };
 
 function put(root, name, content) {
@@ -25,7 +25,7 @@ function fixture() {
     '---', 'name: i-wish',
     'description: Turn an idea into a researched and verified project plan.',
     '---', '', '# i-wish', '', 'A bounded fixture for static checks.',
-    '', '[Lite workflow](references/lite.md#lite-guide)', '',
+    '', '[Plan workflow](references/plan.md#plan)', '',
   ].join('\n'));
   put(root, 'agents/openai.yaml', [
     'interface:', '  short_description: "Guide projects from first idea to verified delivery"',
@@ -76,7 +76,7 @@ test('valid package reports static evidence and stable identity', () => {
   assert.equal(first.report.kind, 'static-packaging-only');
   assert.equal(first.report.units, 'whitespace words, not model tokens');
   assert.deepEqual(first.report.failures, []);
-  assert.equal(first.report.metrics.length, 8);
+  assert.equal(first.report.metrics.length, 6);
   assert.ok(first.report.metrics.every(row => row.path && Number.isInteger(row.words) &&
     Number.isInteger(row.budget) && /^[a-f0-9]{64}$/.test(row.sha256)));
   assert.match(first.report.runtimeSHA256, /^[a-f0-9]{64}$/);
@@ -123,8 +123,8 @@ test('broken local targets and fenced fake anchors fail', () => {
   assert.ok(brokenResult.report.failures.some(f => f.includes('broken link')));
 
   const fake = fixture();
-  put(fake, 'references/lite.md', '# Lite Guide\n\n```\n## Imaginary\n```\n');
-  put(fake, 'SKILL.md', `${readFileSync(join(fake, 'SKILL.md'), 'utf8')}\n[Fake](references/lite.md#imaginary)\n`);
+  put(fake, 'references/build.md', '# Build\n\n```\n## Imaginary\n```\n');
+  put(fake, 'SKILL.md', `${readFileSync(join(fake, 'SKILL.md'), 'utf8')}\n[Fake](references/build.md#imaginary)\n`);
   const fakeResult = checked(fake);
   assert.equal(fakeResult.result.status, 1);
   assert.ok(fakeResult.report.failures.some(f => f.includes('missing heading anchor')));
@@ -132,7 +132,7 @@ test('broken local targets and fenced fake anchors fail', () => {
 
 test('runtime reference links cannot escape the fixture root', () => {
   const root = fixture();
-  put(root, 'references/lite.md', `${readFileSync(join(root, 'references/lite.md'), 'utf8')}\n[Outside](../../outside.md)\n`);
+  put(root, 'references/build.md', `${readFileSync(join(root, 'references/build.md'), 'utf8')}\n[Outside](../../outside.md)\n`);
   const { result, report } = checked(root);
   assert.equal(result.status, 1);
   assert.ok(report.failures.some(f => f.includes('runtime link escapes package')));
@@ -146,7 +146,7 @@ test('unknown and incomplete CLI options exit 2', () => {
 test('active runtime edits change the fingerprint', () => {
   const root = fixture();
   const before = checked(root).report.runtimeSHA256;
-  put(root, 'references/lite.md', `${readFileSync(join(root, 'references/lite.md'), 'utf8')}An active runtime edit.\n`);
+  put(root, 'references/build.md', `${readFileSync(join(root, 'references/build.md'), 'utf8')}An active runtime edit.\n`);
   assert.notEqual(checked(root).report.runtimeSHA256, before);
 });
 
@@ -175,6 +175,20 @@ test('nested runtime reference links cannot escape the fixture root', () => {
   const { result, report } = checked(root);
   assert.equal(result.status, 1);
   assert.ok(report.failures.some(f => f.includes('runtime link escapes package')));
+});
+
+test('top-level references require an explicit budget; nested ones do not', () => {
+  const extra = fixture();
+  put(extra, 'references/extra.md', '# Extra\n\nUnbudgeted top-level reference.\n');
+  const unbudgeted = checked(extra);
+  assert.equal(unbudgeted.result.status, 1);
+  assert.ok(unbudgeted.report.failures.some(f => f.includes('references/extra.md') && f.includes('missing explicit word budget')));
+
+  const nested = fixture();
+  put(nested, 'references/nested/detail.md', '# Detail\n\nNested reference keeps the default budget.\n');
+  const nestedResult = checked(nested);
+  assert.equal(nestedResult.result.status, 0);
+  assert.ok(nestedResult.report.metrics.some(row => row.path === 'references/nested/detail.md'));
 });
 
 test('UI prompt edits change metadata fingerprint without changing runtime fingerprint', () => {

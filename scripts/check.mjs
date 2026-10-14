@@ -15,9 +15,8 @@ for (let i = 0; i < args.length; i++) {
   else { console.error(`Unknown or incomplete option: ${args[i]}`); process.exit(2); }
 }
 const budgets = new Map([
-  ['SKILL.md', 600], ['references/lite.md', 420], ['references/full.md', 1000],
-  ['references/agents.md', 700], ['references/research.md', 550],
-  ['references/verification.md', 800], ['references/records.md', 450],
+  ['SKILL.md', 600], ['references/plan.md', 550], ['references/build.md', 450],
+  ['references/agents.md', 400], ['references/records.md', 350],
   ['references/interview.md', 220],
 ]);
 const failures = [];
@@ -73,7 +72,11 @@ try {
 
   const runtime = new Set(budgets.keys());
   if (existsSync(join(root, 'references'))) {
-    for (const path of walk(join(root, 'references')).filter(path => path.endsWith('.md'))) runtime.add(relative(root, path).replaceAll('\\', '/'));
+    for (const path of walk(join(root, 'references')).filter(path => path.endsWith('.md'))) {
+      const rel = relative(root, path).replaceAll('\\', '/');
+      if (rel.split('/').length === 2 && !budgets.has(rel)) failures.push(`${rel}: missing explicit word budget`);
+      runtime.add(rel);
+    }
   }
   const fingerprint = createHash('sha256');
   for (const path of [...runtime].sort()) {

@@ -9,8 +9,9 @@
 变成明确结果、有依据的选择、经过审计的设计和独立验证的交付。
 一个可安装技能，两套流程。
 
-各阶段按能力缺口展开[元规划](SKILL.md#元规划)：澄清实际目标与质量要求，
-研究所需专业方法，在执行中按证据调整计划，并验证最终效果。
+每个调研阶段都从[能力诊断](references/plan.md#一能力诊断调研第一步必做)开始：
+先问知识、方法、工具、评价四类缺口，只在真有缺口的地方搜；版本、API、价格和平台规则
+一律按“自己的知识会过时”处理。
 
 | 模式 | 适用 | 规划深度 |
 | --- | --- | --- |
@@ -44,9 +45,8 @@ OpenCode `~/.config/opencode/skills/i-wish` 或 `.opencode/skills/i-wish`。
 Windows 下 `mklink /J` 无需管理员即可建立可用的目录联接（Junction）；
 符号链接需要管理员权限或开发者模式。
 
-- [入口](SKILL.md)、[轻量流程](references/lite.md)、[正式流程](references/full.md)
-- [需求澄清](references/interview.md)、[代理职责](references/agents.md)、[调研](references/research.md)、
-  [独立验证](references/verification.md)、[记录](references/records.md)
+- [入口](SKILL.md)、[需求澄清](references/interview.md)、[计划](references/plan.md)、
+  [产出与验证](references/build.md)、[代理职责](references/agents.md)、[记录](references/records.md)
 - [当前流程说明](docs/design/workflow.md)、
   [融合来源表](docs/research/sources.md)、
   [早期对比](docs/research/workflow-comparison.md)
