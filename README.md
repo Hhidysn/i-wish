@@ -58,5 +58,8 @@ symlinks need administrator or Developer Mode.
   [earlier comparison](docs/research/workflow-comparison.md)
 - Development: `node scripts/check.mjs`, `node --test evals/check.test.mjs`;
   [behavioral cases](evals/cases.md)
+- Companion skill: [execution-standards](https://github.com/Hhidysn/execution-standards) —
+  execution-phase standards (role contracts, minimal-change discipline, evidence format,
+  independent verification). i-wish owns the process; that skill owns execution.
 
 [MIT](LICENSE) © 2026 Hhidysn

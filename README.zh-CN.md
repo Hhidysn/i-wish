@@ -52,5 +52,7 @@ Windows 下 `mklink /J` 无需管理员即可建立可用的目录联接（Junct
   [早期对比](docs/research/workflow-comparison.md)
 - 开发检查：`node scripts/check.mjs`、`node --test evals/check.test.mjs`；
   [行为案例](evals/cases.md)
+- 姊妹技能：[execution-standards](https://github.com/Hhidysn/execution-standards) —
+  执行阶段规范（角色作业、最小改动、证据格式、独立验证）。i-wish 管流程，它管执行。
 
 [MIT](LICENSE) © 2026 Hhidysn
